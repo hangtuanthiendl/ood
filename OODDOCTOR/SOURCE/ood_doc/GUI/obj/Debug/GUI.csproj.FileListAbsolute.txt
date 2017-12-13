@@ -1,0 +1,14 @@
+C:\Users\USER\Desktop\ood_doc\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+C:\Users\USER\Desktop\ood_doc\GUI\obj\Debug\MetroBill.ClientControl.resources
+C:\Users\USER\Desktop\ood_doc\GUI\obj\Debug\MetroBill.InvoiceControl.resources
+C:\Users\USER\Desktop\ood_doc\GUI\obj\Debug\MetroBill.MainForm.resources
+C:\Users\USER\Desktop\ood_doc\GUI\obj\Debug\MetroBill.Properties.Resources.resources
+C:\Users\USER\Desktop\ood_doc\GUI\obj\Debug\MetroBill.StartControl.resources
+C:\Users\USER\Desktop\ood_doc\GUI\obj\Debug\MetroBill.StartupForm.resources
+C:\Users\USER\Desktop\ood_doc\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
+C:\Users\USER\Desktop\ood_doc\GUI\obj\Debug\MetroBill.exe
+C:\Users\USER\Desktop\ood_doc\GUI\obj\Debug\MetroBill.pdb
+C:\Users\USER\Desktop\ood_doc\GUI\bin\Debug\MetroBill.exe
+C:\Users\USER\Desktop\ood_doc\GUI\bin\Debug\MetroBill.pdb
+C:\Users\USER\Desktop\ood_doc\GUI\bin\Debug\DevComponents.DotNetBar2.dll
+C:\Users\USER\Desktop\ood_doc\GUI\bin\Debug\DevComponents.DotNetBar2.xml

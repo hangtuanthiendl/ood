@@ -1,0 +1,7 @@
+C:\Users\USER\Desktop\ood_doc\GUI\BUS\bin\Debug\BUS.dll
+C:\Users\USER\Desktop\ood_doc\GUI\BUS\bin\Debug\BUS.pdb
+C:\Users\USER\Desktop\ood_doc\GUI\BUS\bin\Debug\DTO.dll
+C:\Users\USER\Desktop\ood_doc\GUI\BUS\bin\Debug\DTO.pdb
+C:\Users\USER\Desktop\ood_doc\GUI\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\USER\Desktop\ood_doc\GUI\BUS\obj\Debug\BUS.dll
+C:\Users\USER\Desktop\ood_doc\GUI\BUS\obj\Debug\BUS.pdb
