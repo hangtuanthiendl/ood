@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
+using DAL;
 namespace BUS
 {
     class BUS_BenhNhan
     {
-        DTO_BenhNhan bn = new DTO_BenhNhan();
-        public void themBenhNhan()
+        DAL_dbC conn = new DAL.dbConnect();
+        public void ThemBenhNhan(DTO_BenhNhan bn)
         {
 
         }

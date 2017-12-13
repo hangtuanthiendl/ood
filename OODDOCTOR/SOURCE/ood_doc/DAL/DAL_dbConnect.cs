@@ -5,19 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using DTO;
 //References: https://www.codeproject.com/Articles/43438/Connect-C-to-MySQL
 namespace DAL
 {
-    class dbConnect
+    class DAL_dbConnect
     {
         private MySqlConnection connection;
         private string server;
         private string database;
         private string uid;
         private string password;
-
+        
         //Constructor
-        public dbConnect()
+        public DAL_dbConnect()
         {
             Initialize();
         }
@@ -36,7 +37,7 @@ namespace DAL
             connection = new MySqlConnection(connectionString);
         }
 
-        private bool GetOpenConnection()
+        private bool OpenConnection()
         {
             try
             {
@@ -73,6 +74,22 @@ namespace DAL
                 return false;
             }
         }
-  
+        //Thêm bệnh nhân
+        public void ThemBenhNhan(DTO_BenhNhan bn)
+        {
+            string query = "insert into user(MANV, enabled,role,passwordresethash,temppassword) values(LAST_INSERT_ID(),1,2,'12112','11212324')";
+
+            if (this.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                //Execute command
+                cmd.ExecuteNonQuery();
+
+                //close connection
+                this.CloseConnection();
+            }
+        }
     }
 }
