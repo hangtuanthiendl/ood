@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class DTO_CTHDTK
+    class DTO_Cthdtk
     {
         private long _MAHDTK;
         private long _MADV;

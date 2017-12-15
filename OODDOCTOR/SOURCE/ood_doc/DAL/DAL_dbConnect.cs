@@ -9,7 +9,7 @@ using DTO;
 //References: https://www.codeproject.com/Articles/43438/Connect-C-to-MySQL
 namespace DAL
 {
-    class DAL_dbConnect
+    public class DAL_dbConnect
     {
         private MySqlConnection connection;
         private string server;
@@ -75,9 +75,9 @@ namespace DAL
             }
         }
         //Thêm bệnh nhân
-        public void ThemBenhNhan(DTO_BenhNhan bn)
+        public void ThemBenhNhan()
         {
-            string query = "insert into user(MANV, enabled,role,passwordresethash,temppassword) values(LAST_INSERT_ID(),1,2,'12112','11212324')";
+            string query = "insert into user(MANV, enabled,role,passwordresethash,temppassword) values(8,1,2,'12112','11212324')";
 
             if (this.OpenConnection() == true)
             {

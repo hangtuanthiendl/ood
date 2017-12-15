@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{59096F57-9AD2-44D6-9821-8BE1A83C513E}</ProjectGuid>
+    <ProjectGuid>{D29AAAF8-790B-467B-A46D-1BF0F0386484}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DTO</RootNamespace>
-    <AssemblyName>DTO</AssemblyName>
+    <RootNamespace>BUS</RootNamespace>
+    <AssemblyName>BUS</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,18 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTO_BenhNhan.cs" />
-    <Compile Include="DTO_CtDonThuoc.cs" />
-    <Compile Include="DTO_Cthdtk.cs" />
-    <Compile Include="DTO_DichVu.cs" />
-    <Compile Include="DTO_DonGiaDichVu.cs" />
-    <Compile Include="DTO_DonThuoc.cs" />
-    <Compile Include="DTO_Hdtk.cs" />
-    <Compile Include="DTO_Pkb.cs" />
-    <Compile Include="DTO_Profile.cs" />
-    <Compile Include="DTO_Thuoc.cs" />
-    <Compile Include="DTO_User.cs" />
+    <Compile Include="BUS_BenhNhan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{65414139-7182-4e8a-8174-c588a14fa7a4}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{59096f57-9ad2-44d6-9821-8be1a83c513e}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

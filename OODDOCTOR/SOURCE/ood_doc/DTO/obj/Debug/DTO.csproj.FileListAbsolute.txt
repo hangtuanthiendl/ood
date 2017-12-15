@@ -3,3 +3,8 @@ C:\Users\USER\Desktop\ood_doc\DTO\bin\Debug\DTO.pdb
 C:\Users\USER\Desktop\ood_doc\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
 C:\Users\USER\Desktop\ood_doc\DTO\obj\Debug\DTO.dll
 C:\Users\USER\Desktop\ood_doc\DTO\obj\Debug\DTO.pdb
+C:\Users\USER\Desktop\ood\ood2\OODDOCTOR\SOURCE\ood_doc\DTO\bin\Debug\DTO.dll
+C:\Users\USER\Desktop\ood\ood2\OODDOCTOR\SOURCE\ood_doc\DTO\bin\Debug\DTO.pdb
+C:\Users\USER\Desktop\ood\ood2\OODDOCTOR\SOURCE\ood_doc\DTO\obj\Debug\DTO.dll
+C:\Users\USER\Desktop\ood\ood2\OODDOCTOR\SOURCE\ood_doc\DTO\obj\Debug\DTO.pdb
+C:\Users\USER\Desktop\ood\ood2\OODDOCTOR\SOURCE\ood_doc\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
