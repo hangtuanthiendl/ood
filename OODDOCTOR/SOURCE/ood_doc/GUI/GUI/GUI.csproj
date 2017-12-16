@@ -73,11 +73,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NHANVIEN.cs">
+    <Compile Include="BACSI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NHANVIEN.Designer.cs">
-      <DependentUpon>NHANVIEN.cs</DependentUpon>
+    <Compile Include="BACSI.Designer.cs">
+      <DependentUpon>BACSI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GIAM_DOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GIAM_DOC.Designer.cs">
+      <DependentUpon>GIAM_DOC.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
       <SubType>Form</SubType>
@@ -85,16 +91,19 @@
     <Compile Include="User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
-    <Compile Include="GIAMDOC.cs">
+    <Compile Include="NHAN_VIEN.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GIAMDOC.Designer.cs">
-      <DependentUpon>GIAMDOC.cs</DependentUpon>
+    <Compile Include="NHAN_VIEN.Designer.cs">
+      <DependentUpon>NHAN_VIEN.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="NHANVIEN.resx">
-      <DependentUpon>NHANVIEN.cs</DependentUpon>
+    <EmbeddedResource Include="BACSI.resx">
+      <DependentUpon>BACSI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GIAM_DOC.resx">
+      <DependentUpon>GIAM_DOC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User.ibb.resx">
       <DependentUpon>User.cs</DependentUpon>
@@ -102,8 +111,8 @@
     <EmbeddedResource Include="User.resx">
       <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GIAMDOC.resx">
-      <DependentUpon>GIAMDOC.cs</DependentUpon>
+    <EmbeddedResource Include="NHAN_VIEN.resx">
+      <DependentUpon>NHAN_VIEN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -176,6 +185,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\004-care.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\004-care1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\011-stethoscope.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
