@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using DTO;
+using System.Data;
 //References: https://www.codeproject.com/Articles/43438/Connect-C-to-MySQL
 namespace DAL
 {
@@ -89,6 +90,107 @@ namespace DAL
 
                 //close connection
                 this.CloseConnection();
+            }
+        }
+        //Thêm nhân viên
+        public void ThemNhanVien()
+        {
+            string query = "insert into user(MANV, enabled,role,passwordresethash,temppassword) values(12,1,2,'12112','11212324')";
+            string query2 = "insert into profile(TENNV, NGAYSINH, GTINH, DIACHI, SDT, CHUCVU) values('h', '0000-00-00', 1, '12323hjgjhg', 099898, 'h')";
+            if (this.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Connection = connection;
+                MySqlTransaction myTrans;
+                myTrans = connection.BeginTransaction(IsolationLevel.ReadCommitted);
+                cmd.Transaction = myTrans;
+                try
+                {
+                    //cmd.CommandText = query;
+                    //cmd.ExecuteNonQuery();
+                    cmd.CommandText =query2;
+                    cmd.ExecuteNonQuery();
+                    myTrans.Commit();
+                    MessageBox.Show("Thành công!");
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Thêm không thành công!");
+                    myTrans.Rollback();
+                    Console.WriteLine(e.ToString());
+                    Console.WriteLine("Neither record was written to database.");
+                }
+                finally
+                {
+                    this.CloseConnection();
+                }
+                
+            }
+        }
+
+        public void SuaNhanVien()
+        {
+            string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandText = query;
+                cmd.Connection = connection;
+
+                cmd.ExecuteNonQuery();
+
+                this.CloseConnection();
+            }
+        }
+
+        public List<DTO_Profile> DanhSachNhanVien()
+        {
+            string query = "SELECT * FROM profile ";
+
+            //Create a list to store the result
+            List<DTO_Profile> list = new List<DTO_Profile>();
+            
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                //Create a data reader and Execute the command
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                //Read the data and store them in the list
+                while (dataReader.Read())
+                {
+                    DTO_Profile nv = new DTO_Profile(
+                    Convert.ToInt64(dataReader["MANV"])
+                    , Convert.ToString(dataReader["TENNV"])
+                    , Convert.ToDateTime(dataReader["NGAYSINH"])
+                    , Convert.ToBoolean(dataReader["GIOITINH"])
+                    , Convert.ToString(dataReader["DIACHI"])
+                    , Convert.ToInt32(dataReader["SDT"])
+                    , Convert.ToString(dataReader["CHUCVU"])
+                    , Convert.ToBoolean(dataReader["ENABLED"])
+                    , Convert.ToInt32(dataReader["ROLE"])
+                    , Convert.ToString(dataReader["PASSWORDRESSETHASH"])
+                    , Convert.ToString(dataReader["TEMPPASSWORD"]));
+                    list.Add(nv);
+                }
+
+                //close Data Reader
+                dataReader.Close();
+
+                //close Connection
+                this.CloseConnection();
+
+                //return list to be displayed
+                return list;
+            }
+            else
+            {
+                return list;
             }
         }
     }
