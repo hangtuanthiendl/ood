@@ -11,6 +11,10 @@ namespace BUS
         {
             db.ThemNhanVien();
         }
+        public void XoaNhanVien(int a)
+        {
+            db.XoaNhanVien(a);
+        }
 
         public List<DTO_Profile> DanhSachNhanVien()
         {

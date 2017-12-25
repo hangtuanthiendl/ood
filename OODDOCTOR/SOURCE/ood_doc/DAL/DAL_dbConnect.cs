@@ -93,14 +93,14 @@ namespace DAL
             }
         }
         //Thêm nhân viên
-        public void ThemNhanVien()
+        public void ThemNhanVien(string TENNV, Date NGAYSINH, GTINH, DIACHI, SDT, CHUCVU, enabled, role, temppassword)
         {
-            string query = "insert into user(MANV, enabled,role,passwordresethash,temppassword) values(12,1,2,'12112','11212324')";
-            string query2 = "insert into profile(TENNV, NGAYSINH, GTINH, DIACHI, SDT, CHUCVU) values('h', '0000-00-00', 1, '12323hjgjhg', 099898, 'h')";
+            
+            string query2 = " insert into profile(TENNV, NGAYSINH, GTINH, DIACHI, SDT, CHUCVU, enabled, role, temppassword) values('h', '0000-00-00', 1, '12323hjgjhg', 099898, 'h', 1, 2, '11212324')";
             if (this.OpenConnection() == true)
             {
                 //create command and assign the query and connection from the constructor
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlCommand cmd = new MySqlCommand(query2, connection);
                 cmd.Connection = connection;
                 MySqlTransaction myTrans;
                 myTrans = connection.BeginTransaction(IsolationLevel.ReadCommitted);
@@ -146,9 +146,26 @@ namespace DAL
             }
         }
 
+        public void XoaNhanVien(int a)
+        {
+            string query = " UPDATE profile SET enabled = 0 WHERE MANV = " + a.ToString();
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandText = query;
+                cmd.Connection = connection;
+
+                cmd.ExecuteNonQuery();
+
+                this.CloseConnection();
+            }
+        }
+
         public List<DTO_Profile> DanhSachNhanVien()
         {
-            string query = "SELECT * FROM profile ";
+            string query = "SELECT * FROM profile where enabled >= 0";
 
             //Create a list to store the result
             List<DTO_Profile> list = new List<DTO_Profile>();
