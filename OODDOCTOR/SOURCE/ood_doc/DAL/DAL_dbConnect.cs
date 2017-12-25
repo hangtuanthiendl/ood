@@ -93,10 +93,12 @@ namespace DAL
             }
         }
         //Thêm nhân viên
-        public void ThemNhanVien(string TENNV, Date NGAYSINH, GTINH, DIACHI, SDT, CHUCVU, enabled, role, temppassword)
-        {
-            
-            string query2 = " insert into profile(TENNV, NGAYSINH, GTINH, DIACHI, SDT, CHUCVU, enabled, role, temppassword) values('h', '0000-00-00', 1, '12323hjgjhg', 099898, 'h', 1, 2, '11212324')";
+        public void ThemNhanVien(string TENNV, DateTime NGAYSINH, Boolean GTINH, String DIACHI, 
+            int SDT, string CHUCVU, int enabled, int role, string temppassword)
+        {          
+            string query2 = " insert into profile(TENNV, NGAYSINH, GTINH, DIACHI, SDT, CHUCVU, enabled, role, temppassword) values('"+
+               TENNV+ "', '12/12/2018', "+GTINH+", '"+DIACHI+"', "+SDT+", '"+CHUCVU+
+               "', "+enabled+", "+role+", '"+temppassword+"')";
             if (this.OpenConnection() == true)
             {
                 //create command and assign the query and connection from the constructor

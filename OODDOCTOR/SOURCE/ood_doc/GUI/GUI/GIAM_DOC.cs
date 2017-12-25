@@ -129,7 +129,7 @@ namespace GUI
                 btnThem.Text = "Thêm";
                 btnXoa.Enabled = true;
                 btnSua.Enabled = true;
-                
+                nv.ThemNhanVien(txbHoTen.Text, Convert.ToDateTime("12-12-2019"), true, txbDiaChi.Text, Convert.ToInt32(txbSDT.Text), txtbChucVu.Text, 2, cbRole.SelectedIndex, "123456");               
                 XuliCacCongCu(0);
             }
         }
