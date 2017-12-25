@@ -24,12 +24,15 @@ namespace GUI
         {
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
-            list = nv.DanhSachNhanVien();
+            list = nv.DanhSachNhanVien();     
         }
 
         private void NHANVIEN_Load(object sender, EventArgs e)
         {
-
+            for(int i = 0; i<list.Count; i++)
+            {
+                dTOProfileBindingSource.Add(list[i]);
+            }       
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -39,7 +42,17 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            nv.ThemNhanVien();
+            //nv.ThemNhanVien();
+        }
+
+        private void advTree2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lvNHANVIEN_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

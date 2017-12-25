@@ -29,27 +29,16 @@
         private void InitializeComponent()
         {
             this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
+            this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.itemPanel1 = new DevComponents.DotNetBar.ItemPanel();
+            this.tabBenhNhan = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel5 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.btnTaiKhoan = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel4 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.tabDichVu = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.itemPanel1 = new DevComponents.DotNetBar.ItemPanel();
-            this.advTree2 = new DevComponents.AdvTree.AdvTree();
-            this.columnHeader8 = new DevComponents.AdvTree.ColumnHeader();
-            this.columnHeader9 = new DevComponents.AdvTree.ColumnHeader();
-            this.columnHeader10 = new DevComponents.AdvTree.ColumnHeader();
-            this.columnHeader11 = new DevComponents.AdvTree.ColumnHeader();
-            this.columnHeader12 = new DevComponents.AdvTree.ColumnHeader();
-            this.columnHeader13 = new DevComponents.AdvTree.ColumnHeader();
-            this.columnHeader14 = new DevComponents.AdvTree.ColumnHeader();
-            this.node1 = new DevComponents.AdvTree.Node();
-            this.nodeConnector2 = new DevComponents.AdvTree.NodeConnector();
-            this.elementStyle2 = new DevComponents.DotNetBar.ElementStyle();
-            this.tabBenhNhan = new DevComponents.DotNetBar.SuperTabItem();
             this.btnThoat = new DevComponents.DotNetBar.ButtonItem();
             this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
@@ -63,11 +52,11 @@
             this.columnHeader7 = new DevComponents.AdvTree.ColumnHeader();
             this.nodeConnector1 = new DevComponents.AdvTree.NodeConnector();
             this.elementStyle1 = new DevComponents.DotNetBar.ElementStyle();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
             this.superTabControlPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.advTree2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advTree1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,9 +79,9 @@
             this.superTabControl1.ControlBox.MenuBox,
             this.superTabControl1.ControlBox.CloseBox});
             this.superTabControl1.Controls.Add(this.superTabControlPanel2);
+            this.superTabControl1.Controls.Add(this.superTabControlPanel3);
             this.superTabControl1.Controls.Add(this.superTabControlPanel5);
             this.superTabControl1.Controls.Add(this.superTabControlPanel4);
-            this.superTabControl1.Controls.Add(this.superTabControlPanel3);
             this.superTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControl1.ForeColor = System.Drawing.Color.Black;
             this.superTabControl1.Location = new System.Drawing.Point(0, 1);
@@ -111,6 +100,61 @@
             this.btnTaiKhoan,
             this.btnThoat});
             this.superTabControl1.Text = "Dịch vụ";
+            // 
+            // superTabControlPanel2
+            // 
+            this.superTabControlPanel2.Controls.Add(this.tableLayoutPanel1);
+            this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 78);
+            this.superTabControlPanel2.Name = "superTabControlPanel2";
+            this.superTabControlPanel2.Size = new System.Drawing.Size(1168, 536);
+            this.superTabControlPanel2.TabIndex = 0;
+            this.superTabControlPanel2.TabItem = this.tabBenhNhan;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel1.Controls.Add(this.itemPanel1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.listBox1, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.ForeColor = System.Drawing.Color.Black;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1168, 536);
+            this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // itemPanel1
+            // 
+            this.itemPanel1.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.itemPanel1.BackgroundStyle.Class = "ItemPanel";
+            this.itemPanel1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.itemPanel1.ContainerControlProcessDialogKey = true;
+            this.itemPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.itemPanel1.ForeColor = System.Drawing.Color.Black;
+            this.itemPanel1.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
+            this.itemPanel1.Location = new System.Drawing.Point(820, 3);
+            this.itemPanel1.Name = "itemPanel1";
+            this.itemPanel1.Size = new System.Drawing.Size(345, 530);
+            this.itemPanel1.TabIndex = 0;
+            this.itemPanel1.Text = "itemPanel1";
+            // 
+            // tabBenhNhan
+            // 
+            this.tabBenhNhan.AttachedControl = this.superTabControlPanel2;
+            this.tabBenhNhan.GlobalItem = false;
+            this.tabBenhNhan.Image = global::GUI.Properties.Resources._011_stethoscope;
+            this.tabBenhNhan.Name = "tabBenhNhan";
+            this.tabBenhNhan.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabBenhNhan.TabFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabBenhNhan.Text = "BỆNH NHÂN";
             // 
             // superTabControlPanel5
             // 
@@ -151,9 +195,9 @@
             // superTabControlPanel3
             // 
             this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 78);
             this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(1168, 614);
+            this.superTabControlPanel3.Size = new System.Drawing.Size(1168, 536);
             this.superTabControlPanel3.TabIndex = 2;
             this.superTabControlPanel3.TabItem = this.tabDichVu;
             // 
@@ -165,166 +209,6 @@
             this.tabDichVu.Name = "tabDichVu";
             this.tabDichVu.TabFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabDichVu.Text = "DỊCH VỤ";
-            // 
-            // superTabControlPanel2
-            // 
-            this.superTabControlPanel2.Controls.Add(this.tableLayoutPanel1);
-            this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 78);
-            this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(1168, 536);
-            this.superTabControlPanel2.TabIndex = 0;
-            this.superTabControlPanel2.TabItem = this.tabBenhNhan;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel1.Controls.Add(this.itemPanel1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.advTree2, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.ForeColor = System.Drawing.Color.Black;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1168, 536);
-            this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // itemPanel1
-            // 
-            this.itemPanel1.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.itemPanel1.BackgroundStyle.Class = "ItemPanel";
-            this.itemPanel1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.itemPanel1.ContainerControlProcessDialogKey = true;
-            this.itemPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.itemPanel1.ForeColor = System.Drawing.Color.Black;
-            this.itemPanel1.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
-            this.itemPanel1.Location = new System.Drawing.Point(820, 3);
-            this.itemPanel1.Name = "itemPanel1";
-            this.itemPanel1.Size = new System.Drawing.Size(345, 530);
-            this.itemPanel1.TabIndex = 0;
-            this.itemPanel1.Text = "itemPanel1";
-            // 
-            // advTree2
-            // 
-            this.advTree2.AccessibleRole = System.Windows.Forms.AccessibleRole.Outline;
-            this.advTree2.AllowDrop = true;
-            this.advTree2.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.advTree2.BackgroundStyle.Class = "TreeBorderKey";
-            this.advTree2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.advTree2.Columns.Add(this.columnHeader8);
-            this.advTree2.Columns.Add(this.columnHeader9);
-            this.advTree2.Columns.Add(this.columnHeader10);
-            this.advTree2.Columns.Add(this.columnHeader11);
-            this.advTree2.Columns.Add(this.columnHeader12);
-            this.advTree2.Columns.Add(this.columnHeader13);
-            this.advTree2.Columns.Add(this.columnHeader14);
-            this.advTree2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.advTree2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.advTree2.ForeColor = System.Drawing.Color.Black;
-            this.advTree2.Location = new System.Drawing.Point(3, 3);
-            this.advTree2.Name = "advTree2";
-            this.advTree2.Nodes.AddRange(new DevComponents.AdvTree.Node[] {
-            this.node1});
-            this.advTree2.NodesConnector = this.nodeConnector2;
-            this.advTree2.NodeStyle = this.elementStyle2;
-            this.advTree2.PathSeparator = ";";
-            this.advTree2.Size = new System.Drawing.Size(811, 530);
-            this.advTree2.Styles.Add(this.elementStyle2);
-            this.advTree2.TabIndex = 1;
-            this.advTree2.Text = "advTree2";
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.MaxInputLength = 1;
-            this.columnHeader8.MinimumWidth = 100;
-            this.columnHeader8.Name = "columnHeader8";
-            this.columnHeader8.StretchToFill = true;
-            this.columnHeader8.Text = "MANV";
-            this.columnHeader8.Width.Absolute = 150;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.MinimumWidth = 300;
-            this.columnHeader9.Name = "columnHeader9";
-            this.columnHeader9.StretchToFill = true;
-            this.columnHeader9.Text = "Họ và tên";
-            this.columnHeader9.Width.Absolute = 150;
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.MinimumWidth = 100;
-            this.columnHeader10.Name = "columnHeader10";
-            this.columnHeader10.StretchToFill = true;
-            this.columnHeader10.Text = "Ngày sinh";
-            this.columnHeader10.Width.Absolute = 150;
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.MinimumWidth = 50;
-            this.columnHeader11.Name = "columnHeader11";
-            this.columnHeader11.StretchToFill = true;
-            this.columnHeader11.Text = "Giới tính";
-            this.columnHeader11.Width.Absolute = 150;
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.MinimumWidth = 100;
-            this.columnHeader12.Name = "columnHeader12";
-            this.columnHeader12.StretchToFill = true;
-            this.columnHeader12.Text = "Địa chỉ";
-            this.columnHeader12.Width.Absolute = 150;
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.MinimumWidth = 150;
-            this.columnHeader13.Name = "columnHeader13";
-            this.columnHeader13.StretchToFill = true;
-            this.columnHeader13.Text = "SDT";
-            this.columnHeader13.Width.Absolute = 150;
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.MinimumWidth = 100;
-            this.columnHeader14.Name = "columnHeader14";
-            this.columnHeader14.StretchToFill = true;
-            this.columnHeader14.Text = "Chức vụ";
-            this.columnHeader14.Width.Absolute = 150;
-            // 
-            // node1
-            // 
-            this.node1.Expanded = true;
-            this.node1.Name = "node1";
-            this.node1.Text = "Chưa lấy được dữ liệu";
-            // 
-            // nodeConnector2
-            // 
-            this.nodeConnector2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(135)))), ((int)(((byte)(135)))));
-            // 
-            // elementStyle2
-            // 
-            this.elementStyle2.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.elementStyle2.Name = "elementStyle2";
-            this.elementStyle2.TextColor = System.Drawing.Color.Black;
-            // 
-            // tabBenhNhan
-            // 
-            this.tabBenhNhan.AttachedControl = this.superTabControlPanel2;
-            this.tabBenhNhan.GlobalItem = false;
-            this.tabBenhNhan.Image = global::GUI.Properties.Resources._011_stethoscope;
-            this.tabBenhNhan.Name = "tabBenhNhan";
-            this.tabBenhNhan.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabBenhNhan.TabFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabBenhNhan.Text = "BỆNH NHÂN";
             // 
             // btnThoat
             // 
@@ -434,6 +318,16 @@
             this.elementStyle1.Name = "elementStyle1";
             this.elementStyle1.TextColor = System.Drawing.SystemColors.ControlText;
             // 
+            // listBox1
+            // 
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(3, 3);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(811, 530);
+            this.listBox1.TabIndex = 1;
+            // 
             // NHAN_VIEN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -446,7 +340,6 @@
             this.superTabControl1.ResumeLayout(false);
             this.superTabControlPanel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.advTree2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.advTree1)).EndInit();
             this.ResumeLayout(false);
 
@@ -478,16 +371,6 @@
         private DevComponents.DotNetBar.ElementStyle elementStyle1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevComponents.DotNetBar.ItemPanel itemPanel1;
-        private DevComponents.AdvTree.AdvTree advTree2;
-        private DevComponents.AdvTree.ColumnHeader columnHeader8;
-        private DevComponents.AdvTree.ColumnHeader columnHeader9;
-        private DevComponents.AdvTree.ColumnHeader columnHeader10;
-        private DevComponents.AdvTree.ColumnHeader columnHeader11;
-        private DevComponents.AdvTree.ColumnHeader columnHeader12;
-        private DevComponents.AdvTree.ColumnHeader columnHeader13;
-        private DevComponents.AdvTree.ColumnHeader columnHeader14;
-        private DevComponents.AdvTree.Node node1;
-        private DevComponents.AdvTree.NodeConnector nodeConnector2;
-        private DevComponents.DotNetBar.ElementStyle elementStyle2;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

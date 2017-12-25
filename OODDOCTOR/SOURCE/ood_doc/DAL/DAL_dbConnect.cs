@@ -167,15 +167,15 @@ namespace DAL
                     DTO_Profile nv = new DTO_Profile(
                     Convert.ToInt64(dataReader["MANV"])
                     , Convert.ToString(dataReader["TENNV"])
-                    , Convert.ToDateTime(dataReader["NGAYSINH"])
-                    , Convert.ToBoolean(dataReader["GIOITINH"])
+                    , Convert.ToDateTime("12-01-1996")
+                    , Convert.ToBoolean(dataReader["GTINH"])
                     , Convert.ToString(dataReader["DIACHI"])
                     , Convert.ToInt32(dataReader["SDT"])
                     , Convert.ToString(dataReader["CHUCVU"])
-                    , Convert.ToBoolean(dataReader["ENABLED"])
-                    , Convert.ToInt32(dataReader["ROLE"])
-                    , Convert.ToString(dataReader["PASSWORDRESSETHASH"])
-                    , Convert.ToString(dataReader["TEMPPASSWORD"]));
+                    , Convert.ToBoolean(dataReader["enabled"])
+                    , Convert.ToInt32(dataReader["role"])
+                    , Convert.ToString(dataReader["passwordresethash"])
+                    , Convert.ToString(dataReader["temppassword"]));
                     list.Add(nv);
                 }
 
