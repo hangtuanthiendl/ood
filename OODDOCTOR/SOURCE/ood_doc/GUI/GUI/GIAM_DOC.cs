@@ -24,17 +24,15 @@ namespace GUI
         public GIAM_DOC()
         {
             InitializeComponent();
-            WindowState = FormWindowState.Maximized;   
+            WindowState = FormWindowState.Maximized;
+            dtpNgaySinh.Format = DateTimePickerFormat.Custom;
+            dtpNgaySinh.CustomFormat = "dd-MM-yyyy";
+            dtpNgaySinh.ShowUpDown = true;
         }
 
         private void NHANVIEN_Load(object sender, EventArgs e)
         {
-           dTOProfileBindingSource.Clear();
-           list = nv.DanhSachNhanVien();
-            for (int i = 0; i<list.Count; i++)
-            {
-                dTOProfileBindingSource.Add(list[i]);
-            }       
+            Loadlaibang();        
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -129,7 +127,10 @@ namespace GUI
                 btnThem.Text = "Thêm";
                 btnXoa.Enabled = true;
                 btnSua.Enabled = true;
-                nv.ThemNhanVien(txbHoTen.Text, Convert.ToDateTime("12-12-2019"), true, txbDiaChi.Text, Convert.ToInt32(txbSDT.Text), txtbChucVu.Text, 2, cbRole.SelectedIndex, "123456");               
+                MessageBox.Show(""+dtpNgaySinh.Value.ToString("dd-MM-yyyy"));
+                nv.ThemNhanVien(txbHoTen.Text, dtpNgaySinh.Value.ToString("yyyy-MM-dd"), true,
+                    txbDiaChi.Text, 0123456, txtbChucVu.Text, 2, cbRole.SelectedIndex, "123456");
+                Loadlaibang();
                 XuliCacCongCu(0);
             }
         }
@@ -159,6 +160,16 @@ namespace GUI
                 dtpNgaySinh.Enabled = false;
                 cbRole.Enabled = false;
                 dataGridViewX1.Enabled = true;
+            }
+        }
+
+        void Loadlaibang()
+        {
+            dTOProfileBindingSource.Clear();
+            list = nv.DanhSachNhanVien();
+            for (int i = 0; i < list.Count; i++)
+            {
+                dTOProfileBindingSource.Add(list[i]);
             }
         }
     }

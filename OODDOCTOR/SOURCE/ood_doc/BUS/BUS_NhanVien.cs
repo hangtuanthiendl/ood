@@ -8,7 +8,7 @@ namespace BUS
     public class BUS_NhanVien
     {
         DAL_dbConnect db = new DAL_dbConnect();
-        public void ThemNhanVien(string TENNV, DateTime NGAYSINH, Boolean GTINH, String DIACHI,
+        public void ThemNhanVien(string TENNV, string NGAYSINH, Boolean GTINH, String DIACHI,
             int SDT, string CHUCVU, int enabled, int role, string temppassword)
         {
             db.ThemNhanVien(TENNV, NGAYSINH,  GTINH, DIACHI,SDT, CHUCVU, enabled, role, temppassword);

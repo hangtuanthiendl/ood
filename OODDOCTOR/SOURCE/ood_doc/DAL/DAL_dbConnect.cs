@@ -93,12 +93,12 @@ namespace DAL
             }
         }
         //Thêm nhân viên
-        public void ThemNhanVien(string TENNV, DateTime NGAYSINH, Boolean GTINH, String DIACHI, 
+        public void ThemNhanVien(string TENNV, string NGAYSINH, Boolean GTINH, String DIACHI, 
             int SDT, string CHUCVU, int enabled, int role, string temppassword)
         {          
-            string query2 = " insert into profile(TENNV, NGAYSINH, GTINH, DIACHI, SDT, CHUCVU, enabled, role, temppassword) values('"+
-               TENNV+ "', '12/12/2018', "+GTINH+", '"+DIACHI+"', "+SDT+", '"+CHUCVU+
-               "', "+enabled+", "+role+", '"+temppassword+"')";
+            string query2 = "insert into profile(TENNV, NGAYSINH, GTINH, DIACHI, SDT, CHUCVU, enabled,role,temppassword) "+
+                "values('"+TENNV+"','"+NGAYSINH+"',"+GTINH+",'"+DIACHI+"',"+SDT+", '"+CHUCVU+"',"+enabled+","+role+",'"+temppassword+"')";
+
             if (this.OpenConnection() == true)
             {
                 //create command and assign the query and connection from the constructor
@@ -150,7 +150,7 @@ namespace DAL
 
         public void XoaNhanVien(int a)
         {
-            string query = " UPDATE profile SET enabled = 0 WHERE MANV = " + a.ToString();
+            string query = " UPDATE profile SET enabled = -1 WHERE MANV = " + a.ToString();
 
             //Open connection
             if (this.OpenConnection() == true)
@@ -186,7 +186,7 @@ namespace DAL
                     DTO_Profile nv = new DTO_Profile(
                     Convert.ToInt64(dataReader["MANV"])
                     , Convert.ToString(dataReader["TENNV"])
-                    , Convert.ToDateTime("12-01-1996")
+                    , Convert.ToDateTime(dataReader["NGAYSINH"])
                     , Convert.ToBoolean(dataReader["GTINH"])
                     , Convert.ToString(dataReader["DIACHI"])
                     , Convert.ToInt32(dataReader["SDT"])
