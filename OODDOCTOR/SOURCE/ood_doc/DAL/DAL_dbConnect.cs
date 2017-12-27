@@ -183,10 +183,11 @@ namespace DAL
                 //Read the data and store them in the list
                 while (dataReader.Read())
                 {
+                    string s = dataReader["NGAYSINH"].ToString();
                     DTO_Profile nv = new DTO_Profile(
                     Convert.ToInt64(dataReader["MANV"])
                     , Convert.ToString(dataReader["TENNV"])
-                    , Convert.ToDateTime(dataReader["NGAYSINH"])
+                    , Convert.ToDateTime(s)
                     , Convert.ToBoolean(dataReader["GTINH"])
                     , Convert.ToString(dataReader["DIACHI"])
                     , Convert.ToInt32(dataReader["SDT"])

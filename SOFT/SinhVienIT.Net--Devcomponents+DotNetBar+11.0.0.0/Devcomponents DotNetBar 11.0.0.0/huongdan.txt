@@ -1,0 +1,6 @@
+﻿Huong dan
+---
+1. Install DotNetBarSetupTrial_11000.msi
+2. Apply DotNetBar_Patcher_11000_0.exe
+--
+SinhVienIT.net
