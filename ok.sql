@@ -8,7 +8,7 @@ CREATE TABLE `profile` (
 
 `TENNV` varchar(255),
 
-`NGAYSINH` datetime,
+`NGAYSINH` varchar(10),
 
 `GTINH` int NULL DEFAULT NULL,
 
@@ -17,7 +17,7 @@ CREATE TABLE `profile` (
 `SDT` int NULL DEFAULT NULL,
 
 `CHUCVU` longtext NULL,
-`enabled` boolean,
+`enabled` int DEFAULT 2,
 
 `role` int(11) NULL DEFAULT NULL,
 
@@ -51,6 +51,7 @@ CREATE TABLE `Benhnhan` (
 `CTY` longtext NULL,
 
 `TSBENH` longtext NULL,
+`enabled` int DEFAULT 0,
 
 PRIMARY KEY (`MABN`) 
 
@@ -236,7 +237,11 @@ ALTER TABLE `donthuoc` ADD CONSTRAINT `MAPKB_DT` FOREIGN KEY (`MAPKB`) REFERENCE
 
 /* User */
 
-insert into profile(TENNV, NGAYSINH, GTINH, DIACHI, SDT, CHUCVU, enabled,role,temppassword) values('h','0000-00-00',1,'12323hjgjhg',099898, 'h',1,2,'11212324');
+insert into profile(TENNV, NGAYSINH, GTINH, DIACHI, SDT, CHUCVU, enabled,role,temppassword) values('h','12-01-1998',1,'12323hjgjhg',099898, 'h',1,2,'11212324');
+
+UPDATE profile
+SET enabled = 0
+WHERE MANV = 1;
 
 select * from `profile`
 

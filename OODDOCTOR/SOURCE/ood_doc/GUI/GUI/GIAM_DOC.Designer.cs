@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel4 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
@@ -39,6 +39,7 @@
             this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.btnTaiKhoan = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel5 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
             this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -70,8 +71,6 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.dTOProfileBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tabNhanVien = new DevComponents.DotNetBar.SuperTabItem();
             this.mANVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tENNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cHUCVUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,7 +80,8 @@
             this.nGAYSINHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tEMPPASSWORDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rOLEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.dTOProfileBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabNhanVien = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
@@ -111,7 +111,7 @@
             this.superTabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel4.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel4.Name = "superTabControlPanel4";
-            this.superTabControlPanel4.Size = new System.Drawing.Size(1841, 573);
+            this.superTabControlPanel4.Size = new System.Drawing.Size(1841, 811);
             this.superTabControlPanel4.TabIndex = 2;
             this.superTabControlPanel4.TabItem = this.superTabItem2;
             // 
@@ -120,7 +120,7 @@
             this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel3.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(1841, 573);
+            this.superTabControlPanel3.Size = new System.Drawing.Size(1841, 811);
             this.superTabControlPanel3.TabIndex = 2;
             this.superTabControlPanel3.TabItem = this.tabDichVu;
             // 
@@ -164,11 +164,29 @@
             // 
             this.superTabControlPanel5.Controls.Add(this.tableLayoutPanel6);
             this.superTabControlPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel5.Location = new System.Drawing.Point(0, 78);
+            this.superTabControlPanel5.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel5.Name = "superTabControlPanel5";
-            this.superTabControlPanel5.Size = new System.Drawing.Size(1841, 495);
+            this.superTabControlPanel5.Size = new System.Drawing.Size(1841, 811);
             this.superTabControlPanel5.TabIndex = 2;
             this.superTabControlPanel5.TabItem = this.btnTaiKhoan;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
+            this.tableLayoutPanel6.ColumnCount = 3;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.ForeColor = System.Drawing.Color.Black;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 3;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1841, 811);
+            this.tableLayoutPanel6.TabIndex = 0;
             // 
             // superTabControl1
             // 
@@ -188,8 +206,8 @@
             this.superTabControl1.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.superTabControl1.ControlBox.MenuBox,
             this.superTabControl1.ControlBox.CloseBox});
-            this.superTabControl1.Controls.Add(this.superTabControlPanel5);
             this.superTabControl1.Controls.Add(this.superTabControlPanel2);
+            this.superTabControl1.Controls.Add(this.superTabControlPanel5);
             this.superTabControl1.Controls.Add(this.superTabControlPanel3);
             this.superTabControl1.Controls.Add(this.superTabControlPanel4);
             this.superTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -199,7 +217,7 @@
             this.superTabControl1.ReorderTabsEnabled = true;
             this.superTabControl1.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.superTabControl1.SelectedTabIndex = 0;
-            this.superTabControl1.Size = new System.Drawing.Size(1841, 573);
+            this.superTabControl1.Size = new System.Drawing.Size(1841, 811);
             this.superTabControl1.TabFont = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.superTabControl1.TabIndex = 2;
             this.superTabControl1.TabLayoutType = DevComponents.DotNetBar.eSuperTabLayoutType.MultiLineFit;
@@ -217,7 +235,7 @@
             this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel2.Location = new System.Drawing.Point(0, 78);
             this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(1841, 495);
+            this.superTabControlPanel2.Size = new System.Drawing.Size(1841, 733);
             this.superTabControlPanel2.TabIndex = 0;
             this.superTabControlPanel2.TabItem = this.tabNhanVien;
             // 
@@ -236,7 +254,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1841, 495);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1841, 733);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // itemPanel1
@@ -254,7 +272,7 @@
             this.itemPanel1.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
             this.itemPanel1.Location = new System.Drawing.Point(1291, 3);
             this.itemPanel1.Name = "itemPanel1";
-            this.itemPanel1.Size = new System.Drawing.Size(547, 489);
+            this.itemPanel1.Size = new System.Drawing.Size(547, 727);
             this.itemPanel1.TabIndex = 0;
             this.itemPanel1.Text = "itemPanel1";
             // 
@@ -267,7 +285,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.382611F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.63959F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.9778F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 17F));
             this.tableLayoutPanel2.Controls.Add(this.textBoxX6, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.labelX1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.txbMANV, 2, 0);
@@ -298,7 +316,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.08027F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.08027F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.08027F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(547, 489);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(547, 727);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // textBoxX6
@@ -310,7 +328,7 @@
             this.textBoxX6.Border.Class = "TextBoxBorder";
             this.textBoxX6.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX6.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX6.Location = new System.Drawing.Point(533, 3);
+            this.textBoxX6.Location = new System.Drawing.Point(531, 3);
             this.textBoxX6.Multiline = true;
             this.textBoxX6.Name = "textBoxX6";
             this.textBoxX6.Size = new System.Drawing.Size(1, 36);
@@ -325,7 +343,7 @@
             this.labelX1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX1.ForeColor = System.Drawing.Color.Black;
-            this.labelX1.Location = new System.Drawing.Point(36, 17);
+            this.labelX1.Location = new System.Drawing.Point(36, 43);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(71, 34);
             this.labelX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
@@ -346,10 +364,10 @@
             this.txbMANV.Enabled = false;
             this.txbMANV.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbMANV.ForeColor = System.Drawing.Color.Black;
-            this.txbMANV.Location = new System.Drawing.Point(113, 17);
+            this.txbMANV.Location = new System.Drawing.Point(113, 43);
             this.txbMANV.Multiline = true;
             this.txbMANV.Name = "txbMANV";
-            this.txbMANV.Size = new System.Drawing.Size(414, 34);
+            this.txbMANV.Size = new System.Drawing.Size(412, 34);
             this.txbMANV.TabIndex = 1;
             // 
             // labelX2
@@ -361,7 +379,7 @@
             this.labelX2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(36, 69);
+            this.labelX2.Location = new System.Drawing.Point(36, 121);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(71, 36);
             this.labelX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
@@ -379,10 +397,10 @@
             this.txbHoTen.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txbHoTen.Enabled = false;
             this.txbHoTen.ForeColor = System.Drawing.Color.Black;
-            this.txbHoTen.Location = new System.Drawing.Point(113, 69);
+            this.txbHoTen.Location = new System.Drawing.Point(113, 121);
             this.txbHoTen.Multiline = true;
             this.txbHoTen.Name = "txbHoTen";
-            this.txbHoTen.Size = new System.Drawing.Size(414, 36);
+            this.txbHoTen.Size = new System.Drawing.Size(412, 36);
             this.txbHoTen.TabIndex = 3;
             // 
             // txbDiaChi
@@ -396,10 +414,10 @@
             this.txbDiaChi.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txbDiaChi.Enabled = false;
             this.txbDiaChi.ForeColor = System.Drawing.Color.Black;
-            this.txbDiaChi.Location = new System.Drawing.Point(113, 178);
+            this.txbDiaChi.Location = new System.Drawing.Point(113, 283);
             this.txbDiaChi.Multiline = true;
             this.txbDiaChi.Name = "txbDiaChi";
-            this.txbDiaChi.Size = new System.Drawing.Size(414, 36);
+            this.txbDiaChi.Size = new System.Drawing.Size(412, 36);
             this.txbDiaChi.TabIndex = 5;
             // 
             // txbSDT
@@ -413,10 +431,10 @@
             this.txbSDT.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txbSDT.Enabled = false;
             this.txbSDT.ForeColor = System.Drawing.Color.Black;
-            this.txbSDT.Location = new System.Drawing.Point(113, 232);
+            this.txbSDT.Location = new System.Drawing.Point(113, 363);
             this.txbSDT.Multiline = true;
             this.txbSDT.Name = "txbSDT";
-            this.txbSDT.Size = new System.Drawing.Size(414, 36);
+            this.txbSDT.Size = new System.Drawing.Size(412, 36);
             this.txbSDT.TabIndex = 8;
             // 
             // txtbChucVu
@@ -430,10 +448,10 @@
             this.txtbChucVu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txtbChucVu.Enabled = false;
             this.txtbChucVu.ForeColor = System.Drawing.Color.Black;
-            this.txtbChucVu.Location = new System.Drawing.Point(113, 286);
+            this.txtbChucVu.Location = new System.Drawing.Point(113, 443);
             this.txtbChucVu.Multiline = true;
             this.txtbChucVu.Name = "txtbChucVu";
-            this.txtbChucVu.Size = new System.Drawing.Size(414, 36);
+            this.txtbChucVu.Size = new System.Drawing.Size(412, 36);
             this.txtbChucVu.TabIndex = 6;
             // 
             // tableLayoutPanel3
@@ -447,11 +465,11 @@
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.ForeColor = System.Drawing.Color.Black;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(113, 111);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(113, 163);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(414, 49);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(412, 76);
             this.tableLayoutPanel3.TabIndex = 11;
             // 
             // labelX4
@@ -463,7 +481,7 @@
             this.labelX4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX4.ForeColor = System.Drawing.Color.Black;
-            this.labelX4.Location = new System.Drawing.Point(168, 23);
+            this.labelX4.Location = new System.Drawing.Point(167, 50);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(76, 23);
             this.labelX4.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
@@ -477,9 +495,9 @@
             this.dtpNgaySinh.Enabled = false;
             this.dtpNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgaySinh.ForeColor = System.Drawing.Color.Black;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(250, 19);
+            this.dtpNgaySinh.Location = new System.Drawing.Point(249, 46);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(161, 27);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(160, 27);
             this.dtpNgaySinh.TabIndex = 3;
             // 
             // tableLayoutPanel4
@@ -491,11 +509,11 @@
             this.tableLayoutPanel4.Controls.Add(this.chkNu, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel4.ForeColor = System.Drawing.Color.Black;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 30);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(159, 43);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(158, 43);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
             // chkNam
@@ -507,7 +525,7 @@
             this.chkNam.ForeColor = System.Drawing.Color.Black;
             this.chkNam.Location = new System.Drawing.Point(3, 19);
             this.chkNam.Name = "chkNam";
-            this.chkNam.Size = new System.Drawing.Size(89, 21);
+            this.chkNam.Size = new System.Drawing.Size(88, 21);
             this.chkNam.TabIndex = 0;
             this.chkNam.TabStop = true;
             this.chkNam.Text = "Nam";
@@ -519,7 +537,7 @@
             this.chkNu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.chkNu.Enabled = false;
             this.chkNu.ForeColor = System.Drawing.Color.Black;
-            this.chkNu.Location = new System.Drawing.Point(98, 19);
+            this.chkNu.Location = new System.Drawing.Point(97, 19);
             this.chkNu.Name = "chkNu";
             this.chkNu.Size = new System.Drawing.Size(58, 21);
             this.chkNu.TabIndex = 1;
@@ -535,7 +553,7 @@
             this.labelX3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX3.ForeColor = System.Drawing.Color.Black;
-            this.labelX3.Location = new System.Drawing.Point(36, 137);
+            this.labelX3.Location = new System.Drawing.Point(36, 216);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(71, 23);
             this.labelX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
@@ -551,7 +569,7 @@
             this.labelX5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX5.ForeColor = System.Drawing.Color.Black;
-            this.labelX5.Location = new System.Drawing.Point(36, 191);
+            this.labelX5.Location = new System.Drawing.Point(36, 296);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(71, 23);
             this.labelX5.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
@@ -567,7 +585,7 @@
             this.labelX6.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX6.ForeColor = System.Drawing.Color.Black;
-            this.labelX6.Location = new System.Drawing.Point(36, 245);
+            this.labelX6.Location = new System.Drawing.Point(36, 376);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(71, 23);
             this.labelX6.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
@@ -583,7 +601,7 @@
             this.labelX7.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labelX7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX7.ForeColor = System.Drawing.Color.Black;
-            this.labelX7.Location = new System.Drawing.Point(36, 299);
+            this.labelX7.Location = new System.Drawing.Point(36, 456);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(71, 23);
             this.labelX7.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
@@ -599,7 +617,7 @@
             this.labelX8.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labelX8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX8.ForeColor = System.Drawing.Color.Black;
-            this.labelX8.Location = new System.Drawing.Point(36, 353);
+            this.labelX8.Location = new System.Drawing.Point(36, 536);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(71, 23);
             this.labelX8.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
@@ -614,12 +632,12 @@
             this.tableLayoutPanel5.Controls.Add(this.cbRole, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel5.ForeColor = System.Drawing.Color.Black;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(113, 328);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(113, 511);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(414, 48);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(412, 48);
             this.tableLayoutPanel5.TabIndex = 17;
             // 
             // cbRole
@@ -636,7 +654,7 @@
             "Nhân viên"});
             this.cbRole.Location = new System.Drawing.Point(3, 8);
             this.cbRole.Name = "cbRole";
-            this.cbRole.Size = new System.Drawing.Size(159, 37);
+            this.cbRole.Size = new System.Drawing.Size(158, 37);
             this.cbRole.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -646,9 +664,9 @@
             this.flowLayoutPanel1.Controls.Add(this.btnSua);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.ForeColor = System.Drawing.Color.Black;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(113, 436);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(113, 645);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(414, 50);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(412, 79);
             this.flowLayoutPanel1.TabIndex = 19;
             // 
             // btnThem
@@ -687,14 +705,14 @@
             // 
             this.dataGridViewX1.AutoGenerateColumns = false;
             this.dataGridViewX1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewX1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewX1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewX1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.mANVDataGridViewTextBoxColumn,
@@ -707,36 +725,22 @@
             this.tEMPPASSWORDDataGridViewTextBoxColumn,
             this.rOLEDataGridViewTextBoxColumn});
             this.dataGridViewX1.DataSource = this.dTOProfileBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewX1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewX1.Name = "dataGridViewX1";
             this.dataGridViewX1.RowTemplate.Height = 24;
-            this.dataGridViewX1.Size = new System.Drawing.Size(1282, 489);
+            this.dataGridViewX1.Size = new System.Drawing.Size(1282, 727);
             this.dataGridViewX1.TabIndex = 1;
             this.dataGridViewX1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX1_CellClick);
-            // 
-            // dTOProfileBindingSource
-            // 
-            this.dTOProfileBindingSource.DataSource = typeof(DTO.DTO_Profile);
-            // 
-            // tabNhanVien
-            // 
-            this.tabNhanVien.AttachedControl = this.superTabControlPanel2;
-            this.tabNhanVien.GlobalItem = false;
-            this.tabNhanVien.Image = global::GUI.Properties.Resources._013_doctor_1;
-            this.tabNhanVien.Name = "tabNhanVien";
-            this.tabNhanVien.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabNhanVien.TabFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabNhanVien.Text = "NHÂN VIÊN";
             // 
             // mANVDataGridViewTextBoxColumn
             // 
@@ -800,27 +804,25 @@
             this.rOLEDataGridViewTextBoxColumn.Name = "rOLEDataGridViewTextBoxColumn";
             this.rOLEDataGridViewTextBoxColumn.Width = 70;
             // 
-            // tableLayoutPanel6
+            // dTOProfileBindingSource
             // 
-            this.tableLayoutPanel6.ColumnCount = 3;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 3;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33.3F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1841, 495);
-            this.tableLayoutPanel6.TabIndex = 0;
+            this.dTOProfileBindingSource.DataSource = typeof(DTO.DTO_Profile);
+            // 
+            // tabNhanVien
+            // 
+            this.tabNhanVien.AttachedControl = this.superTabControlPanel2;
+            this.tabNhanVien.GlobalItem = false;
+            this.tabNhanVien.Image = global::GUI.Properties.Resources._013_doctor_1;
+            this.tabNhanVien.Name = "tabNhanVien";
+            this.tabNhanVien.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabNhanVien.TabFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabNhanVien.Text = "NHÂN VIÊN";
             // 
             // GIAM_DOC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1842, 575);
+            this.ClientSize = new System.Drawing.Size(1842, 813);
             this.Controls.Add(this.superTabControl1);
             this.Name = "GIAM_DOC";
             this.Text = "NHANVIEN";
