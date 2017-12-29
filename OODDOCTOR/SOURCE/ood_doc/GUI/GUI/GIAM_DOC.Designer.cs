@@ -285,7 +285,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.382611F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.63959F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.9778F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 17F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 19F));
             this.tableLayoutPanel2.Controls.Add(this.textBoxX6, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.labelX1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.txbMANV, 2, 0);
@@ -328,7 +328,7 @@
             this.textBoxX6.Border.Class = "TextBoxBorder";
             this.textBoxX6.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX6.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX6.Location = new System.Drawing.Point(531, 3);
+            this.textBoxX6.Location = new System.Drawing.Point(530, 3);
             this.textBoxX6.Multiline = true;
             this.textBoxX6.Name = "textBoxX6";
             this.textBoxX6.Size = new System.Drawing.Size(1, 36);
@@ -367,7 +367,7 @@
             this.txbMANV.Location = new System.Drawing.Point(113, 43);
             this.txbMANV.Multiline = true;
             this.txbMANV.Name = "txbMANV";
-            this.txbMANV.Size = new System.Drawing.Size(412, 34);
+            this.txbMANV.Size = new System.Drawing.Size(411, 34);
             this.txbMANV.TabIndex = 1;
             // 
             // labelX2
@@ -400,7 +400,7 @@
             this.txbHoTen.Location = new System.Drawing.Point(113, 121);
             this.txbHoTen.Multiline = true;
             this.txbHoTen.Name = "txbHoTen";
-            this.txbHoTen.Size = new System.Drawing.Size(412, 36);
+            this.txbHoTen.Size = new System.Drawing.Size(411, 36);
             this.txbHoTen.TabIndex = 3;
             // 
             // txbDiaChi
@@ -417,7 +417,7 @@
             this.txbDiaChi.Location = new System.Drawing.Point(113, 283);
             this.txbDiaChi.Multiline = true;
             this.txbDiaChi.Name = "txbDiaChi";
-            this.txbDiaChi.Size = new System.Drawing.Size(412, 36);
+            this.txbDiaChi.Size = new System.Drawing.Size(411, 36);
             this.txbDiaChi.TabIndex = 5;
             // 
             // txbSDT
@@ -434,7 +434,7 @@
             this.txbSDT.Location = new System.Drawing.Point(113, 363);
             this.txbSDT.Multiline = true;
             this.txbSDT.Name = "txbSDT";
-            this.txbSDT.Size = new System.Drawing.Size(412, 36);
+            this.txbSDT.Size = new System.Drawing.Size(411, 36);
             this.txbSDT.TabIndex = 8;
             // 
             // txtbChucVu
@@ -451,7 +451,7 @@
             this.txtbChucVu.Location = new System.Drawing.Point(113, 443);
             this.txtbChucVu.Multiline = true;
             this.txtbChucVu.Name = "txtbChucVu";
-            this.txtbChucVu.Size = new System.Drawing.Size(412, 36);
+            this.txtbChucVu.Size = new System.Drawing.Size(411, 36);
             this.txtbChucVu.TabIndex = 6;
             // 
             // tableLayoutPanel3
@@ -469,7 +469,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(412, 76);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(411, 76);
             this.tableLayoutPanel3.TabIndex = 11;
             // 
             // labelX4
@@ -497,7 +497,7 @@
             this.dtpNgaySinh.ForeColor = System.Drawing.Color.Black;
             this.dtpNgaySinh.Location = new System.Drawing.Point(249, 46);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(160, 27);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(159, 27);
             this.dtpNgaySinh.TabIndex = 3;
             // 
             // tableLayoutPanel4
@@ -637,7 +637,7 @@
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(412, 48);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(411, 48);
             this.tableLayoutPanel5.TabIndex = 17;
             // 
             // cbRole
@@ -666,7 +666,7 @@
             this.flowLayoutPanel1.ForeColor = System.Drawing.Color.Black;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(113, 645);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(412, 79);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(411, 79);
             this.flowLayoutPanel1.TabIndex = 19;
             // 
             // btnThem
@@ -700,6 +700,7 @@
             this.btnSua.TabIndex = 20;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // dataGridViewX1
             // 

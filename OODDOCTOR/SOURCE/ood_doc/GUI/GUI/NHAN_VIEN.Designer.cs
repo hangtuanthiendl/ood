@@ -32,13 +32,14 @@
             this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.itemPanel1 = new DevComponents.DotNetBar.ItemPanel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabBenhNhan = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.tabDichVu = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel5 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.btnTaiKhoan = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel4 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.tabDichVu = new DevComponents.DotNetBar.SuperTabItem();
             this.btnThoat = new DevComponents.DotNetBar.ButtonItem();
             this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
@@ -52,7 +53,6 @@
             this.columnHeader7 = new DevComponents.AdvTree.ColumnHeader();
             this.nodeConnector1 = new DevComponents.AdvTree.NodeConnector();
             this.elementStyle1 = new DevComponents.DotNetBar.ElementStyle();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
             this.superTabControlPanel2.SuspendLayout();
@@ -78,8 +78,8 @@
             this.superTabControl1.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.superTabControl1.ControlBox.MenuBox,
             this.superTabControl1.ControlBox.CloseBox});
-            this.superTabControl1.Controls.Add(this.superTabControlPanel2);
             this.superTabControl1.Controls.Add(this.superTabControlPanel3);
+            this.superTabControl1.Controls.Add(this.superTabControlPanel2);
             this.superTabControl1.Controls.Add(this.superTabControlPanel5);
             this.superTabControl1.Controls.Add(this.superTabControlPanel4);
             this.superTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -89,7 +89,7 @@
             this.superTabControl1.ReorderTabsEnabled = true;
             this.superTabControl1.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.superTabControl1.SelectedTabIndex = 0;
-            this.superTabControl1.Size = new System.Drawing.Size(1168, 614);
+            this.superTabControl1.Size = new System.Drawing.Size(1582, 649);
             this.superTabControl1.TabFont = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.superTabControl1.TabIndex = 0;
             this.superTabControl1.TabLayoutType = DevComponents.DotNetBar.eSuperTabLayoutType.MultiLineFit;
@@ -107,7 +107,7 @@
             this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel2.Location = new System.Drawing.Point(0, 78);
             this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(1168, 536);
+            this.superTabControlPanel2.Size = new System.Drawing.Size(1582, 571);
             this.superTabControlPanel2.TabIndex = 0;
             this.superTabControlPanel2.TabItem = this.tabBenhNhan;
             // 
@@ -125,7 +125,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1168, 536);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1582, 571);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // itemPanel1
@@ -140,11 +140,23 @@
             this.itemPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.itemPanel1.ForeColor = System.Drawing.Color.Black;
             this.itemPanel1.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
-            this.itemPanel1.Location = new System.Drawing.Point(820, 3);
+            this.itemPanel1.Location = new System.Drawing.Point(1110, 3);
             this.itemPanel1.Name = "itemPanel1";
-            this.itemPanel1.Size = new System.Drawing.Size(345, 530);
+            this.itemPanel1.Size = new System.Drawing.Size(469, 565);
             this.itemPanel1.TabIndex = 0;
             this.itemPanel1.Text = "itemPanel1";
+            // 
+            // listBox1
+            // 
+            this.listBox1.BackColor = System.Drawing.Color.White;
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox1.ForeColor = System.Drawing.Color.Black;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(3, 3);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(1101, 565);
+            this.listBox1.TabIndex = 1;
             // 
             // tabBenhNhan
             // 
@@ -156,12 +168,30 @@
             this.tabBenhNhan.TabFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabBenhNhan.Text = "BỆNH NHÂN";
             // 
+            // superTabControlPanel3
+            // 
+            this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 78);
+            this.superTabControlPanel3.Name = "superTabControlPanel3";
+            this.superTabControlPanel3.Size = new System.Drawing.Size(1582, 571);
+            this.superTabControlPanel3.TabIndex = 2;
+            this.superTabControlPanel3.TabItem = this.tabDichVu;
+            // 
+            // tabDichVu
+            // 
+            this.tabDichVu.AttachedControl = this.superTabControlPanel3;
+            this.tabDichVu.GlobalItem = false;
+            this.tabDichVu.Image = global::GUI.Properties.Resources._007_microscope;
+            this.tabDichVu.Name = "tabDichVu";
+            this.tabDichVu.TabFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabDichVu.Text = "DỊCH VỤ";
+            // 
             // superTabControlPanel5
             // 
             this.superTabControlPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel5.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel5.Name = "superTabControlPanel5";
-            this.superTabControlPanel5.Size = new System.Drawing.Size(1168, 614);
+            this.superTabControlPanel5.Size = new System.Drawing.Size(1582, 649);
             this.superTabControlPanel5.TabIndex = 2;
             this.superTabControlPanel5.TabItem = this.btnTaiKhoan;
             // 
@@ -179,7 +209,7 @@
             this.superTabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel4.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel4.Name = "superTabControlPanel4";
-            this.superTabControlPanel4.Size = new System.Drawing.Size(1168, 614);
+            this.superTabControlPanel4.Size = new System.Drawing.Size(1582, 649);
             this.superTabControlPanel4.TabIndex = 2;
             this.superTabControlPanel4.TabItem = this.superTabItem2;
             // 
@@ -191,24 +221,6 @@
             this.superTabItem2.Name = "superTabItem2";
             this.superTabItem2.TabFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.superTabItem2.Text = "THUỐC";
-            // 
-            // superTabControlPanel3
-            // 
-            this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 78);
-            this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(1168, 536);
-            this.superTabControlPanel3.TabIndex = 2;
-            this.superTabControlPanel3.TabItem = this.tabDichVu;
-            // 
-            // tabDichVu
-            // 
-            this.tabDichVu.AttachedControl = this.superTabControlPanel3;
-            this.tabDichVu.GlobalItem = false;
-            this.tabDichVu.Image = global::GUI.Properties.Resources._007_microscope;
-            this.tabDichVu.Name = "tabDichVu";
-            this.tabDichVu.TabFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabDichVu.Text = "DỊCH VỤ";
             // 
             // btnThoat
             // 
@@ -318,21 +330,11 @@
             this.elementStyle1.Name = "elementStyle1";
             this.elementStyle1.TextColor = System.Drawing.SystemColors.ControlText;
             // 
-            // listBox1
-            // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(3, 3);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(811, 530);
-            this.listBox1.TabIndex = 1;
-            // 
             // NHAN_VIEN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1169, 616);
+            this.ClientSize = new System.Drawing.Size(1583, 651);
             this.Controls.Add(this.superTabControl1);
             this.Name = "NHAN_VIEN";
             this.Text = "Main";

@@ -13,6 +13,11 @@ namespace BUS
         {
             db.ThemNhanVien(TENNV, NGAYSINH,  GTINH, DIACHI,SDT, CHUCVU, enabled, role, temppassword);
         }
+        public void SuaNhanVien(int MANV, string TENNV, string NGAYSINH, Boolean GTINH, String DIACHI,
+            int SDT, string CHUCVU, int enabled, int role, string temppassword)
+        {
+            db.SuaNhanVien(MANV,TENNV, NGAYSINH, GTINH, DIACHI, SDT, CHUCVU, enabled, role, temppassword);
+        }
         public void XoaNhanVien(int a)
         {
             db.XoaNhanVien(a);

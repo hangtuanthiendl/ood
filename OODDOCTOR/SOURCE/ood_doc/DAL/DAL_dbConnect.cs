@@ -131,20 +131,42 @@ namespace DAL
             }
         }
 
-        public void SuaNhanVien()
+        public void SuaNhanVien(int MANV , string TENNV, string NGAYSINH, Boolean GTINH, String DIACHI,
+            int SDT, string CHUCVU, int enabled, int role, string temppassword)
         {
-            string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
+            string query2 = "Update profile set TENNV = "+TENNV +", NGAYSINH = "+NGAYSINH
+                +", GTINH = "+GTINH+", DIACHI = "+DIACHI+", SDT = "+SDT+", CHUCVU = "+CHUCVU+", enabled = "+ enabled+
+                ",role = "+role+",temppassword = "+temppassword+" where MANV = "+MANV;
 
-            //Open connection
             if (this.OpenConnection() == true)
             {
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.CommandText = query;
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query2, connection);
                 cmd.Connection = connection;
+                MySqlTransaction myTrans;
+                myTrans = connection.BeginTransaction(IsolationLevel.ReadCommitted);
+                cmd.Transaction = myTrans;
+                try
+                {
+                    //cmd.CommandText = query;
+                    //cmd.ExecuteNonQuery();
+                    cmd.CommandText = query2;
+                    cmd.ExecuteNonQuery();
+                    myTrans.Commit();
+                    MessageBox.Show("Thành công!");
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Thêm không thành công!");
+                    myTrans.Rollback();
+                    Console.WriteLine(e.ToString());
+                    Console.WriteLine("Neither record was written to database.");
+                }
+                finally
+                {
+                    this.CloseConnection();
+                }
 
-                cmd.ExecuteNonQuery();
-
-                this.CloseConnection();
             }
         }
 

@@ -119,15 +119,14 @@ namespace GUI
                 btnThem.Text = "Lưu";
                 btnXoa.Enabled = false;
                 btnSua.Enabled = false;
-
                 XuliCacCongCu(1);
+                txbMANV.Text = "######";
             }
             else
             {
                 btnThem.Text = "Thêm";
                 btnXoa.Enabled = true;
                 btnSua.Enabled = true;
-                MessageBox.Show(""+dtpNgaySinh.Value.ToString("dd-MM-yyyy"));
                 nv.ThemNhanVien(txbHoTen.Text, dtpNgaySinh.Value.ToString("yyyy-MM-dd"), true,
                     txbDiaChi.Text, 0123456, txtbChucVu.Text, 2, cbRole.SelectedIndex, "123456");
                 Loadlaibang();
@@ -170,6 +169,27 @@ namespace GUI
             for (int i = 0; i < list.Count; i++)
             {
                 dTOProfileBindingSource.Add(list[i]);
+            }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if (btnSua.Text == "Sửa")
+            {
+                btnSua.Text = "Lưu";
+                btnXoa.Enabled = false;
+                btnThem.Enabled = false;
+                XuliCacCongCu(1);
+            }
+            else
+            {
+                btnSua.Text = "Sửa";
+                btnXoa.Enabled = true;
+                btnThem.Enabled = true;
+                nv.SuaNhanVien(Convert.ToInt32(txbMANV.Text) ,txbHoTen.Text, dtpNgaySinh.Value.ToString("yyyy-MM-dd"), true,
+                txbDiaChi.Text, 0123456, txtbChucVu.Text, 2, cbRole.SelectedIndex, "123456");
+                Loadlaibang();
+                XuliCacCongCu(0);
             }
         }
     }

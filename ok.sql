@@ -239,9 +239,7 @@ ALTER TABLE `donthuoc` ADD CONSTRAINT `MAPKB_DT` FOREIGN KEY (`MAPKB`) REFERENCE
 
 insert into profile(TENNV, NGAYSINH, GTINH, DIACHI, SDT, CHUCVU, enabled,role,temppassword) values('h','12-01-1998',1,'12323hjgjhg',099898, 'h',1,2,'11212324');
 
-UPDATE profile
-SET enabled = 0
-WHERE MANV = 1;
-
+Update profile set TENNV = "+TENNV +", NGAYSINH = "+NGAYSINH+", GTINH = true, DIACHI = "+DIACHI+", SDT = 01234567, CHUCVU = "+CHUCVU+", enabled = 1,role = "+role+",temppassword = "+temppassword+" where MANV = "2"
+;
 select * from `profile`
 
