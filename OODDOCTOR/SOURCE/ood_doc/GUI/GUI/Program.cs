@@ -16,7 +16,8 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GIAM_DOC());
+            Application.Run(new User());
+            //Application.Run(new GIAM_DOC());
         }
     }
 }

@@ -38,7 +38,7 @@ namespace DAL
             connection = new MySqlConnection(connectionString);
         }
 
-        private bool OpenConnection()
+        public bool OpenConnection()
         {
             try
             {
@@ -184,6 +184,57 @@ namespace DAL
 
                 this.CloseConnection();
             }
+        }
+
+        public int KiemTraUser(string username, string password)
+        {
+            string query2 = "SELECT role FROM profile WHERE MANV ='" + username + "' and temppassword ='" + password + "'";
+
+            if (this.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query2, connection);
+                cmd.Connection = connection;
+                MySqlTransaction myTrans;
+                myTrans = connection.BeginTransaction(IsolationLevel.ReadCommitted);
+                cmd.Transaction = myTrans;
+                DataTable dt = new DataTable();
+                MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
+                sda.Fill(dt);
+                try
+                {
+                    if (dt.Rows.Count > 0)
+                        if (dt.Rows[0][0].ToString() == "2") return 2;
+                        else
+                            if (dt.Rows[0][0].ToString() == "1") return 1;
+                        else
+                            return 0;
+                    else
+                        return -1;
+                    ////cmd.CommandText = query;
+                    ////cmd.ExecuteNonQuery();
+                    //cmd.CommandText = query2;
+                    //cmd.ExecuteNonQuery();
+                    //myTrans.Commit();
+                    //MessageBox.Show("Tài khoản hợp lệ");
+
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Tài khảon không hợp lệ");
+                    myTrans.Rollback();
+                    Console.WriteLine(e.ToString());
+                    Console.WriteLine("Neither record was written to database.");
+                    return -1;
+                }
+                finally
+                {
+                    this.CloseConnection();
+                }
+                
+            }
+            else
+                return -1;
         }
 
         public List<DTO_Profile> DanhSachNhanVien()

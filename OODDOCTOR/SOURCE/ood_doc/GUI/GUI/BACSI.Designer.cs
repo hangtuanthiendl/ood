@@ -61,8 +61,9 @@
             // 
             this.superTabControlPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel5.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.superTabControlPanel5.Name = "superTabControlPanel5";
-            this.superTabControlPanel5.Size = new System.Drawing.Size(1083, 587);
+            this.superTabControlPanel5.Size = new System.Drawing.Size(800, 445);
             this.superTabControlPanel5.TabIndex = 2;
             this.superTabControlPanel5.TabItem = this.btnTaiKhoan;
             // 
@@ -96,8 +97,9 @@
             this.superTabControlPanel2.Controls.Add(this.tableLayoutPanel1);
             this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel2.Location = new System.Drawing.Point(0, 78);
+            this.superTabControlPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(1083, 509);
+            this.superTabControlPanel2.Size = new System.Drawing.Size(800, 367);
             this.superTabControlPanel2.TabIndex = 0;
             this.superTabControlPanel2.TabItem = this.tabBenhNhan;
             // 
@@ -112,10 +114,11 @@
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.ForeColor = System.Drawing.Color.Black;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1083, 509);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 367);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // itemPanel1
@@ -130,9 +133,10 @@
             this.itemPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.itemPanel1.ForeColor = System.Drawing.Color.Black;
             this.itemPanel1.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
-            this.itemPanel1.Location = new System.Drawing.Point(761, 3);
+            this.itemPanel1.Location = new System.Drawing.Point(562, 2);
+            this.itemPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.itemPanel1.Name = "itemPanel1";
-            this.itemPanel1.Size = new System.Drawing.Size(319, 503);
+            this.itemPanel1.Size = new System.Drawing.Size(236, 363);
             this.itemPanel1.TabIndex = 0;
             this.itemPanel1.Text = "itemPanel1";
             // 
@@ -156,14 +160,15 @@
             this.advTree2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advTree2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.advTree2.ForeColor = System.Drawing.Color.Black;
-            this.advTree2.Location = new System.Drawing.Point(3, 3);
+            this.advTree2.Location = new System.Drawing.Point(2, 2);
+            this.advTree2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.advTree2.Name = "advTree2";
             this.advTree2.Nodes.AddRange(new DevComponents.AdvTree.Node[] {
             this.node1});
             this.advTree2.NodesConnector = this.nodeConnector2;
             this.advTree2.NodeStyle = this.elementStyle2;
             this.advTree2.PathSeparator = ";";
-            this.advTree2.Size = new System.Drawing.Size(752, 503);
+            this.advTree2.Size = new System.Drawing.Size(556, 363);
             this.advTree2.Styles.Add(this.elementStyle2);
             this.advTree2.TabIndex = 1;
             this.advTree2.Text = "advTree2";
@@ -253,9 +258,10 @@
             // superTabControlPanel4
             // 
             this.superTabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel4.Location = new System.Drawing.Point(0, 78);
+            this.superTabControlPanel4.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.superTabControlPanel4.Name = "superTabControlPanel4";
-            this.superTabControlPanel4.Size = new System.Drawing.Size(1083, 509);
+            this.superTabControlPanel4.Size = new System.Drawing.Size(800, 445);
             this.superTabControlPanel4.TabIndex = 2;
             this.superTabControlPanel4.TabItem = this.superTabItem2;
             // 
@@ -269,6 +275,7 @@
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Shape = new DevComponents.DotNetBar.EllipticalShapeDescriptor();
             this.btnThoat.Text = "THOÁT";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // superTabControl1
             // 
@@ -294,11 +301,12 @@
             this.superTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControl1.ForeColor = System.Drawing.Color.Black;
             this.superTabControl1.Location = new System.Drawing.Point(0, 1);
+            this.superTabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.superTabControl1.Name = "superTabControl1";
             this.superTabControl1.ReorderTabsEnabled = true;
             this.superTabControl1.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.superTabControl1.SelectedTabIndex = 0;
-            this.superTabControl1.Size = new System.Drawing.Size(1083, 587);
+            this.superTabControl1.Size = new System.Drawing.Size(800, 445);
             this.superTabControl1.TabFont = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.superTabControl1.TabIndex = 2;
             this.superTabControl1.TabLayoutType = DevComponents.DotNetBar.eSuperTabLayoutType.MultiLineFit;
@@ -311,10 +319,11 @@
             // 
             // BACSI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 589);
+            this.ClientSize = new System.Drawing.Size(801, 447);
             this.Controls.Add(this.superTabControl1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "BACSI";
             this.Text = "BACSI";
             this.superTabControlPanel2.ResumeLayout(false);

@@ -60,6 +60,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files (x86)\DotNetBar\DevComponents.TreeGX.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -143,6 +144,10 @@
     <ProjectReference Include="..\..\BUS\BUS.csproj">
       <Project>{d29aaaf8-790b-467b-a46d-1bf0f0386484}</Project>
       <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DAL\DAL.csproj">
+      <Project>{65414139-7182-4E8A-8174-C588A14FA7A4}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\DTO\DTO.csproj">
       <Project>{59096f57-9ad2-44d6-9821-8be1a83c513e}</Project>
