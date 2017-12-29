@@ -82,6 +82,8 @@
             this.rOLEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dTOProfileBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabNhanVien = new DevComponents.DotNetBar.SuperTabItem();
+            this.btnBaoBieu = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.superTabControlPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
@@ -109,18 +111,18 @@
             // superTabControlPanel4
             // 
             this.superTabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel4.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel4.Location = new System.Drawing.Point(0, 78);
             this.superTabControlPanel4.Name = "superTabControlPanel4";
-            this.superTabControlPanel4.Size = new System.Drawing.Size(1841, 811);
+            this.superTabControlPanel4.Size = new System.Drawing.Size(1841, 733);
             this.superTabControlPanel4.TabIndex = 2;
             this.superTabControlPanel4.TabItem = this.superTabItem2;
             // 
             // superTabControlPanel3
             // 
             this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 78);
             this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(1841, 811);
+            this.superTabControlPanel3.Size = new System.Drawing.Size(1841, 733);
             this.superTabControlPanel3.TabIndex = 2;
             this.superTabControlPanel3.TabItem = this.tabDichVu;
             // 
@@ -164,9 +166,9 @@
             // 
             this.superTabControlPanel5.Controls.Add(this.tableLayoutPanel6);
             this.superTabControlPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel5.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel5.Location = new System.Drawing.Point(0, 78);
             this.superTabControlPanel5.Name = "superTabControlPanel5";
-            this.superTabControlPanel5.Size = new System.Drawing.Size(1841, 811);
+            this.superTabControlPanel5.Size = new System.Drawing.Size(1841, 733);
             this.superTabControlPanel5.TabIndex = 2;
             this.superTabControlPanel5.TabItem = this.btnTaiKhoan;
             // 
@@ -185,7 +187,7 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1841, 811);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1841, 733);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // superTabControl1
@@ -206,10 +208,11 @@
             this.superTabControl1.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.superTabControl1.ControlBox.MenuBox,
             this.superTabControl1.ControlBox.CloseBox});
-            this.superTabControl1.Controls.Add(this.superTabControlPanel2);
-            this.superTabControl1.Controls.Add(this.superTabControlPanel5);
             this.superTabControl1.Controls.Add(this.superTabControlPanel3);
+            this.superTabControl1.Controls.Add(this.superTabControlPanel1);
+            this.superTabControl1.Controls.Add(this.superTabControlPanel5);
             this.superTabControl1.Controls.Add(this.superTabControlPanel4);
+            this.superTabControl1.Controls.Add(this.superTabControlPanel2);
             this.superTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControl1.ForeColor = System.Drawing.Color.Black;
             this.superTabControl1.Location = new System.Drawing.Point(0, 1);
@@ -226,6 +229,7 @@
             this.tabDichVu,
             this.superTabItem2,
             this.btnTaiKhoan,
+            this.btnBaoBieu,
             this.btnThoat});
             this.superTabControl1.Text = "Dịch vụ";
             // 
@@ -819,6 +823,22 @@
             this.tabNhanVien.TabFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabNhanVien.Text = "NHÂN VIÊN";
             // 
+            // btnBaoBieu
+            // 
+            this.btnBaoBieu.AttachedControl = this.superTabControlPanel1;
+            this.btnBaoBieu.GlobalItem = false;
+            this.btnBaoBieu.Name = "btnBaoBieu";
+            this.btnBaoBieu.Text = "Báo biểu";
+            // 
+            // superTabControlPanel1
+            // 
+            this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel1.Location = new System.Drawing.Point(0, 78);
+            this.superTabControlPanel1.Name = "superTabControlPanel1";
+            this.superTabControlPanel1.Size = new System.Drawing.Size(1841, 733);
+            this.superTabControlPanel1.TabIndex = 0;
+            this.superTabControlPanel1.TabItem = this.btnBaoBieu;
+            // 
             // GIAM_DOC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -899,5 +919,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tEMPPASSWORDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rOLEDataGridViewTextBoxColumn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel1;
+        private DevComponents.DotNetBar.SuperTabItem btnBaoBieu;
     }
 }

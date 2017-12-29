@@ -134,8 +134,8 @@ namespace DAL
         public void SuaNhanVien(int MANV , string TENNV, string NGAYSINH, Boolean GTINH, String DIACHI,
             int SDT, string CHUCVU, int enabled, int role, string temppassword)
         {
-            string query2 = "Update profile set TENNV = '"+TENNV +"', NGAYSINH = '12-01-1996', GTINH = "+GTINH+", DIACHI = "+DIACHI+", SDT = "+SDT+", CHUCVU = "+CHUCVU+", enabled = "+ enabled+
-                ",role = "+role+",temppassword = "+temppassword+" where MANV = "+MANV;
+            string query2 = "Update profile set TENNV = '"+TENNV +"', NGAYSINH = '12-01-1996', GTINH = "+GTINH+", DIACHI = '"+DIACHI+"', SDT = "+SDT+", CHUCVU = '"+CHUCVU+"', enabled = "+ enabled+
+                ",role = "+role+",temppassword = '"+temppassword+"' where MANV = "+MANV;
 
             if (this.OpenConnection() == true)
             {
