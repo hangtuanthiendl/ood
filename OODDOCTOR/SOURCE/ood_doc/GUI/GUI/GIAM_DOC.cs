@@ -65,10 +65,10 @@ namespace GUI
 
         private void dataGridViewX1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-           
-           
+
         }
+        //==================================================================================================
+        //Tab Profile
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -109,6 +109,43 @@ namespace GUI
             }
         }
 
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if (btnSua.Text == "Sửa")
+            {
+                btnSua.Text = "Lưu";
+                btnXoa.Enabled = false;
+                btnThem.Enabled = false;
+                XuliCacCongCu(1);
+            }
+            else
+            {
+                btnSua.Text = "Sửa";
+                btnXoa.Enabled = true;
+                btnThem.Enabled = true;
+                nv.SuaNhanVien(Convert.ToInt32(txbMANV.Text) ,txbHoTen.Text, dtpNgaySinh.Value.ToString("yyyy-MM-dd"), true,
+                txbDiaChi.Text, 0123456, txtbChucVu.Text, 2, cbRole.SelectedIndex, "123456");
+                LoadLaibangNhanVien();
+                XuliCacCongCu(0);
+            }
+        }
+
+        // //==================================================================================================
+        //Tab Dịch Vụ
+        private void dgvDichVU_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                txbMADV.Text = dgvDICHVU.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txbTENDV.Text = dgvDICHVU.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txbMANV2.Text = dgvDICHVU.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txbGIADV2.Text = dgvDICHVU.Rows[e.RowIndex].Cells[3].Value.ToString();
+                            
+            }
+        }
+        //==================================================================================================
+        //CÁC HÀM XỬ LÍ KHÁC
+        //Các hàm xử lí enabled
         void XuliCacCongCu(int a)
         {
             if (a == 1)
@@ -136,30 +173,6 @@ namespace GUI
                 dgvNHANVIEN.Enabled = true;
             }
         }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            if (btnSua.Text == "Sửa")
-            {
-                btnSua.Text = "Lưu";
-                btnXoa.Enabled = false;
-                btnThem.Enabled = false;
-                XuliCacCongCu(1);
-            }
-            else
-            {
-                btnSua.Text = "Sửa";
-                btnXoa.Enabled = true;
-                btnThem.Enabled = true;
-                nv.SuaNhanVien(Convert.ToInt32(txbMANV.Text) ,txbHoTen.Text, dtpNgaySinh.Value.ToString("yyyy-MM-dd"), true,
-                txbDiaChi.Text, 0123456, txtbChucVu.Text, 2, cbRole.SelectedIndex, "123456");
-                LoadLaibangNhanVien();
-                XuliCacCongCu(0);
-            }
-        }
-
-        //==================================================================================================
-        //CÁC HÀM XỬ LÍ KHÁC
         //Các hàm load bảng
         void LoadLaibangNhanVien()
         {
@@ -178,6 +191,43 @@ namespace GUI
             {
                 dTODichVuBindingSource.Add(listdv[i]);
             }
+        }
+
+        private void dgvNHANVIEN_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                Select = Convert.ToInt32(dgvNHANVIEN.Rows[e.RowIndex].Cells[0].Value);
+                txbMANV.Text = dgvNHANVIEN.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txbHoTen.Text = dgvNHANVIEN.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txbDiaChi.Text = dgvNHANVIEN.Rows[e.RowIndex].Cells[4].Value.ToString();
+                txbSDT.Text = dgvNHANVIEN.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtbChucVu.Text = dgvNHANVIEN.Rows[e.RowIndex].Cells[1].Value.ToString();
+                //Kiểm tra giới tính
+                if (Convert.ToBoolean(dgvNHANVIEN.Rows[e.RowIndex].Cells[5].Value.ToString()) == true)
+                {
+                    chkNam.Checked = true;
+                }
+                else
+                {
+                    chkNu.Checked = true;
+                }
+
+                //Kiểm tra role
+                if (Convert.ToInt32(dgvNHANVIEN.Rows[e.RowIndex].Cells[8].Value.ToString()) == 1)
+                {
+                    cbRole.SelectedIndex = 1;
+                }
+                if (Convert.ToInt32(dgvNHANVIEN.Rows[e.RowIndex].Cells[8].Value.ToString()) == 2)
+                {
+                    cbRole.SelectedIndex = 2;
+                }
+                if (Convert.ToInt32(dgvNHANVIEN.Rows[e.RowIndex].Cells[8].Value.ToString()) == 3)
+                {
+                    cbRole.SelectedIndex = 3;
+                }
+            }
+
         }
     }
 }
