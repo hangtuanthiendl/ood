@@ -20,19 +20,26 @@ namespace GUI
     {
         int Select = -1;
         BUS_NhanVien nv = new BUS_NhanVien();
+        BUS_DichVu dv = new BUS_DichVu();
+
         List<DTO_Profile> list;
-        public GIAM_DOC()
+        List<DTO_DichVu> listdv;
+        DTO_Profile prf;
+        public GIAM_DOC(DTO_Profile prf1)
         {
+            prf = prf1;
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
             dtpNgaySinh.Format = DateTimePickerFormat.Custom;
             dtpNgaySinh.CustomFormat = "dd-MM-yyyy";
             dtpNgaySinh.ShowUpDown = true;
+            LoadLaiBangDichVu();
         }
 
         private void NHANVIEN_Load(object sender, EventArgs e)
         {
-            Loadlaibang();        
+            LoadLaibangNhanVien();
+            
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -58,39 +65,7 @@ namespace GUI
 
         private void dataGridViewX1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            if(e.RowIndex >= 0)
-            {
-                Select = Convert.ToInt32(dataGridViewX1.Rows[e.RowIndex].Cells[0].Value);
-                txbMANV.Text = dataGridViewX1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txbHoTen.Text = dataGridViewX1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                txbDiaChi.Text = dataGridViewX1.Rows[e.RowIndex].Cells[4].Value.ToString();
-                txbSDT.Text = dataGridViewX1.Rows[e.RowIndex].Cells[3].Value.ToString();
-                txtbChucVu.Text = dataGridViewX1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                //Kiểm tra giới tính
-                if(Convert.ToBoolean(dataGridViewX1.Rows[e.RowIndex].Cells[5].Value.ToString()) == true)
-                {
-                    chkNam.Checked = true;
-                }
-                else
-                {
-                    chkNu.Checked = true;
-                }
-
-                //Kiểm tra role
-                if (Convert.ToInt32(dataGridViewX1.Rows[e.RowIndex].Cells[8].Value.ToString()) == 1)
-                {
-                    cbRole.SelectedIndex = 1;
-                }
-                if (Convert.ToInt32(dataGridViewX1.Rows[e.RowIndex].Cells[8].Value.ToString()) == 2)
-                {
-                    cbRole.SelectedIndex = 2;
-                }
-                if (Convert.ToInt32(dataGridViewX1.Rows[e.RowIndex].Cells[8].Value.ToString()) == 3)
-                {
-                    cbRole.SelectedIndex = 3;
-                }
-            }
+            
            
            
         }
@@ -129,7 +104,7 @@ namespace GUI
                 btnSua.Enabled = true;
                 nv.ThemNhanVien(txbHoTen.Text, dtpNgaySinh.Value.ToString("yyyy-MM-dd"), true,
                     txbDiaChi.Text, 0123456, txtbChucVu.Text, 2, cbRole.SelectedIndex, "123456");
-                Loadlaibang();
+                LoadLaibangNhanVien();
                 XuliCacCongCu(0);
             }
         }
@@ -146,7 +121,7 @@ namespace GUI
                 chkNu.Enabled = true;
                 dtpNgaySinh.Enabled = true;
                 cbRole.Enabled = true;
-                dataGridViewX1.Enabled = false;
+                dgvNHANVIEN.Enabled = false;
             }
             else
             {
@@ -158,17 +133,7 @@ namespace GUI
                 chkNu.Enabled = false;
                 dtpNgaySinh.Enabled = false;
                 cbRole.Enabled = false;
-                dataGridViewX1.Enabled = true;
-            }
-        }
-
-        void Loadlaibang()
-        {
-            dTOProfileBindingSource.Clear();
-            list = nv.DanhSachNhanVien();
-            for (int i = 0; i < list.Count; i++)
-            {
-                dTOProfileBindingSource.Add(list[i]);
+                dgvNHANVIEN.Enabled = true;
             }
         }
 
@@ -188,8 +153,30 @@ namespace GUI
                 btnThem.Enabled = true;
                 nv.SuaNhanVien(Convert.ToInt32(txbMANV.Text) ,txbHoTen.Text, dtpNgaySinh.Value.ToString("yyyy-MM-dd"), true,
                 txbDiaChi.Text, 0123456, txtbChucVu.Text, 2, cbRole.SelectedIndex, "123456");
-                Loadlaibang();
+                LoadLaibangNhanVien();
                 XuliCacCongCu(0);
+            }
+        }
+
+        //==================================================================================================
+        //CÁC HÀM XỬ LÍ KHÁC
+        //Các hàm load bảng
+        void LoadLaibangNhanVien()
+        {
+            dTOProfileBindingSource.Clear();
+            list = nv.DanhSachNhanVien();
+            for (int i = 0; i < list.Count; i++)
+            {
+                dTOProfileBindingSource.Add(list[i]);
+            }
+        }
+        void LoadLaiBangDichVu()
+        {
+            dTODichVuBindingSource.Clear();
+            listdv = dv.DanhSachDichvu(); ;
+            for (int i = 0; i < listdv.Count; i++)
+            {
+                dTODichVuBindingSource.Add(listdv[i]);
             }
         }
     }

@@ -161,15 +161,6 @@ PRIMARY KEY (`MATHUOC`)
 
 
 
-CREATE TABLE `dichvu` (
-
-`MADICHVU` int(5) unsigned zerofill NOT NULL AUTO_INCREMENT,
-
-`TENDICHVU` longtext NULL,
-
-PRIMARY KEY (`MADICHVU`) 
-
-);
 
 
 
@@ -187,9 +178,11 @@ PRIMARY KEY (`MANV`)
 
 
 
-CREATE TABLE `dongiadichvu` (
+CREATE TABLE `dichvu` (
 
-`MADV` int(5) unsigned zerofill,
+`MADV` int(5) unsigned zerofill NOT NULL AUTO_INCREMENT,
+
+`TENDICHVU` longtext NULL,
 
 `MANV` int(5) unsigned zerofill,
 
@@ -220,15 +213,14 @@ ALTER TABLE `pkb` ADD CONSTRAINT `MABS_PKB_2` FOREIGN KEY (`MABS`) REFERENCES `p
 
 ALTER TABLE `ctdonthuoc` ADD CONSTRAINT `THUOC` FOREIGN KEY (`MATHUOC`) REFERENCES `thuoc` (`MATHUOC`);
 
-ALTER TABLE `cthdtk` ADD CONSTRAINT `MADV` FOREIGN KEY (`MADICHVU`) REFERENCES `dichvu` (`MADICHVU`);
+ALTER TABLE `cthdtk` ADD CONSTRAINT `MADV` FOREIGN KEY (`MADICHVU`) REFERENCES `dichvu` (`MADV`);
 
 ALTER TABLE `dongiathuoc` ADD CONSTRAINT `MATHUOC` FOREIGN KEY (`MATHUOC`) REFERENCES `thuoc` (`MATHUOC`);
 
 ALTER TABLE `dongiathuoc` ADD CONSTRAINT `manv` FOREIGN KEY (`MANV`) REFERENCES `profile` (`MANV`);
 
-ALTER TABLE `dongiadichvu` ADD CONSTRAINT `MADICHVU` FOREIGN KEY (`MADV`) REFERENCES `dichvu` (`MADICHVU`);
 
-ALTER TABLE `dongiadichvu` ADD CONSTRAINT `MANV_DGDV` FOREIGN KEY (`MANV`) REFERENCES `profile` (`MANV`);
+ALTER TABLE `dichvu` ADD CONSTRAINT `MANV_DGDV` FOREIGN KEY (`MANV`) REFERENCES `profile` (`MANV`);
 
 ALTER TABLE `donthuoc` ADD CONSTRAINT `MAPKB_DT` FOREIGN KEY (`MAPKB`) REFERENCES `pkb` (`MAPKB`);
 
@@ -236,10 +228,22 @@ ALTER TABLE `donthuoc` ADD CONSTRAINT `MAPKB_DT` FOREIGN KEY (`MAPKB`) REFERENCE
 
 
 /* User */
+/*Profile*/
+insert into profile(TENNV, NGAYSINH, GTINH, DIACHI, SDT, CHUCVU, enabled,role,temppassword) values('Hàng Tuấn Thiên','12-01-1998',1,'12323hjgjhg',099898, 'h',1,0,'123456');
+insert into profile(TENNV, NGAYSINH, GTINH, DIACHI, SDT, CHUCVU, enabled,role,temppassword) values('Đỗ Trung Quốc','12-01-1998',1,'12323hjgjhg',099898, 'h',1,1,'123456');
+insert into profile(TENNV, NGAYSINH, GTINH, DIACHI, SDT, CHUCVU, enabled,role,temppassword) values('Nguyễn Anh Dũ','12-01-1998',1,'12323hjgjhg',099898, 'h',1,2,'123456');
+insert into profile(TENNV, NGAYSINH, GTINH, DIACHI, SDT, CHUCVU, enabled,role,temppassword) values('Lê Văn Cường','12-01-1998',1,'12323hjgjhg',099898, 'h',1,0,'123456');
+select * from `profile`;
 
-insert into profile(TENNV, NGAYSINH, GTINH, DIACHI, SDT, CHUCVU, enabled,role,temppassword) values('h','12-01-1998',1,'12323hjgjhg',099898, 'h',1,2,'11212324');
 
-Update profile set TENNV = "+TENNV +", NGAYSINH = "+NGAYSINH+", GTINH = true, DIACHI = "+DIACHI+", SDT = 01234567, CHUCVU = "+CHUCVU+", enabled = 1,role = "+role+",temppassword = "+temppassword+" where MANV = "2"
+update profile set TENNV = "+TENNV +", NGAYSINH = "12/01/1996", GTINH = true, DIACHI = "+DIACHI+", SDT = 01234567, CHUCVU = "+CHUCVU+", enabled = 1,role = "1",temppassword = "+temppassword+" where MANV = "2"
 ;
-select * from `profile`
 
+
+SELECT * FROM profile WHERE MANV = 2 and temppassword ='123456';
+
+/*DichVu*/
+
+insert into dichvu(`TENDICHVU`,`MANV`, `GIADICHVU`) values('Khám tổng quát',1,200000);
+
+SELECT * from dichvu;

@@ -92,7 +92,8 @@ namespace DAL
                 this.CloseConnection();
             }
         }
-        //Thêm nhân viên
+        //=======================================================================================
+        //Các hàm xử lí trên hân viên
         public void ThemNhanVien(string TENNV, string NGAYSINH, Boolean GTINH, String DIACHI, 
             int SDT, string CHUCVU, int enabled, int role, string temppassword)
         {          
@@ -186,64 +187,13 @@ namespace DAL
             }
         }
 
-        public int KiemTraUser(string username, string password)
-        {
-            string query2 = "SELECT role FROM profile WHERE MANV ='" + username + "' and temppassword ='" + password + "'";
-
-            if (this.OpenConnection() == true)
-            {
-                //create command and assign the query and connection from the constructor
-                MySqlCommand cmd = new MySqlCommand(query2, connection);
-                cmd.Connection = connection;
-                MySqlTransaction myTrans;
-                myTrans = connection.BeginTransaction(IsolationLevel.ReadCommitted);
-                cmd.Transaction = myTrans;
-                DataTable dt = new DataTable();
-                MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
-                sda.Fill(dt);
-                try
-                {
-                    if (dt.Rows.Count > 0)
-                        if (dt.Rows[0][0].ToString() == "2") return 2;
-                        else
-                            if (dt.Rows[0][0].ToString() == "1") return 1;
-                        else
-                            return 0;
-                    else
-                        return -1;
-                    ////cmd.CommandText = query;
-                    ////cmd.ExecuteNonQuery();
-                    //cmd.CommandText = query2;
-                    //cmd.ExecuteNonQuery();
-                    //myTrans.Commit();
-                    //MessageBox.Show("Tài khoản hợp lệ");
-
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show("Tài khảon không hợp lệ");
-                    myTrans.Rollback();
-                    Console.WriteLine(e.ToString());
-                    Console.WriteLine("Neither record was written to database.");
-                    return -1;
-                }
-                finally
-                {
-                    this.CloseConnection();
-                }
-                
-            }
-            else
-                return -1;
-        }
-
         public List<DTO_Profile> DanhSachNhanVien()
         {
             string query = "SELECT * FROM profile where enabled >= 0";
 
             //Create a list to store the result
             List<DTO_Profile> list = new List<DTO_Profile>();
-            
+
             //Open connection
             if (this.OpenConnection() == true)
             {
@@ -286,5 +236,127 @@ namespace DAL
                 return list;
             }
         }
+        //Kết thúc các hàm xử lí dành cho nhân viên
+
+
+        //=======================================================================================
+        //Các hàm xử lí trên dịch vụ
+
+
+        public List<DTO_DichVu> DanhSachDichvu()
+        {
+            string query = "SELECT * FROM dichvu";
+
+            //Create a list to store the result
+            List<DTO_DichVu> list = new List<DTO_DichVu>();
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                //Create a data reader and Execute the command
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                //Read the data and store them in the list
+                while (dataReader.Read())
+                {
+                    DTO_DichVu dv = new DTO_DichVu(
+                    Convert.ToInt64(dataReader["MADV"]),
+                    Convert.ToString(dataReader["TENDICHVU"]),
+                     Convert.ToInt64(dataReader["MANV"]),
+                     Convert.ToDouble(dataReader["GIADICHVU"]));
+                    list.Add(dv);
+                }
+
+                //close Data Reader
+                dataReader.Close();
+
+                //close Connection
+                this.CloseConnection();
+
+                //return list to be displayed
+                return list;
+            }
+            else
+            {
+                return list;
+            }
+        }
+        //Kết thúc các hàm xử lí dành cho dịch vụ
+
+
+
+        //=======================================================================================
+        public DTO_Profile KiemTraUser(string username, string password)
+        {
+            string query2 = "SELECT * FROM profile WHERE MANV ='" + username + "' and temppassword ='" + password + "'";
+            //string query2 = "SELECT * FROM profile WHERE MANV = 2 and temppassword ='123456'";
+            DTO_Profile prf = null;
+            if (this.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query2, connection);
+                cmd.Connection = connection;
+                MySqlTransaction myTrans;
+                myTrans = connection.BeginTransaction(IsolationLevel.ReadCommitted);
+                cmd.Transaction = myTrans;
+                //DataTable dt = new DataTable();
+                MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                //sda.Fill(dt);
+                try
+                {
+                    while (dataReader.Read())
+                    {
+                      prf = new DTO_Profile(
+                    Convert.ToInt64(dataReader["MANV"])
+                    , Convert.ToString(dataReader["TENNV"])
+                    , Convert.ToDateTime(dataReader["NGAYSINH"])
+                    , Convert.ToBoolean(dataReader["GTINH"])
+                    , Convert.ToString(dataReader["DIACHI"])
+                    , Convert.ToInt32(dataReader["SDT"])
+                    , Convert.ToString(dataReader["CHUCVU"])
+                    , Convert.ToBoolean(dataReader["enabled"])
+                    , Convert.ToInt32(dataReader["role"])
+                    , Convert.ToString(dataReader["passwordresethash"])
+                    , Convert.ToString(dataReader["temppassword"]));
+                    }
+                    return prf;
+                    //if (dt.Rows.Count > 0)
+                    //    if (dt.Rows[0][0].ToString() == "2") return 2;
+                    //    else
+                    //        if (dt.Rows[0][0].ToString() == "1") return 1;
+                    //    else
+                    //        return 0;
+                    //else
+                    //    return -1;
+                    ////cmd.CommandText = query;
+                    ////cmd.ExecuteNonQuery();
+                    //cmd.CommandText = query2;
+                    //cmd.ExecuteNonQuery();
+                    //myTrans.Commit();
+                    //MessageBox.Show("Tài khoản hợp lệ");
+
+                }
+                catch (Exception e)
+                {
+                    //MessageBox.Show("Tài khoản không hợp lệ");
+                    //myTrans.Rollback();
+                    Console.WriteLine(e.ToString());
+                    Console.WriteLine("Neither record was written to database.");
+                    return null;
+                }
+                finally
+                {
+                    this.CloseConnection();
+                }
+                
+            }
+            else
+                return null;
+        }
+
+       
     }
 }

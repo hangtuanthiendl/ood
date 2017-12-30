@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class DTO_Thuoc
+    public class DTO_Thuoc
     {
         private long _MATHUOC;
         private string _TENTHUOC;
         private int _SOLUONGCON;
+        private double _DONGIA;
+
+        public double DONGIA
+        {
+            get { return _DONGIA; }
+            set { _DONGIA = value; }
+        }
 
         public int SOLUONGCON
         {
