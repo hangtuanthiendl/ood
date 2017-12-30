@@ -241,7 +241,7 @@
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.382611F));
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.63959F));
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.9778F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel13.Controls.Add(this.textBoxX8, 3, 0);
             this.tableLayoutPanel13.Controls.Add(this.labelX17, 1, 0);
             this.tableLayoutPanel13.Controls.Add(this.textBoxX9, 2, 0);
@@ -284,7 +284,7 @@
             this.textBoxX8.Border.Class = "TextBoxBorder";
             this.textBoxX8.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX8.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX8.Location = new System.Drawing.Point(523, 3);
+            this.textBoxX8.Location = new System.Drawing.Point(522, 3);
             this.textBoxX8.Multiline = true;
             this.textBoxX8.Name = "textBoxX8";
             this.textBoxX8.Size = new System.Drawing.Size(1, 36);
@@ -323,7 +323,7 @@
             this.textBoxX9.Location = new System.Drawing.Point(112, 52);
             this.textBoxX9.Multiline = true;
             this.textBoxX9.Name = "textBoxX9";
-            this.textBoxX9.Size = new System.Drawing.Size(405, 34);
+            this.textBoxX9.Size = new System.Drawing.Size(404, 34);
             this.textBoxX9.TabIndex = 1;
             // 
             // labelX18
@@ -356,7 +356,7 @@
             this.textBoxX10.Location = new System.Drawing.Point(112, 139);
             this.textBoxX10.Multiline = true;
             this.textBoxX10.Name = "textBoxX10";
-            this.textBoxX10.Size = new System.Drawing.Size(405, 36);
+            this.textBoxX10.Size = new System.Drawing.Size(404, 36);
             this.textBoxX10.TabIndex = 3;
             // 
             // textBoxX11
@@ -373,7 +373,7 @@
             this.textBoxX11.Location = new System.Drawing.Point(112, 319);
             this.textBoxX11.Multiline = true;
             this.textBoxX11.Name = "textBoxX11";
-            this.textBoxX11.Size = new System.Drawing.Size(405, 36);
+            this.textBoxX11.Size = new System.Drawing.Size(404, 36);
             this.textBoxX11.TabIndex = 5;
             // 
             // textBoxX12
@@ -390,7 +390,7 @@
             this.textBoxX12.Location = new System.Drawing.Point(112, 408);
             this.textBoxX12.Multiline = true;
             this.textBoxX12.Name = "textBoxX12";
-            this.textBoxX12.Size = new System.Drawing.Size(405, 36);
+            this.textBoxX12.Size = new System.Drawing.Size(404, 36);
             this.textBoxX12.TabIndex = 8;
             // 
             // textBoxX13
@@ -407,7 +407,7 @@
             this.textBoxX13.Location = new System.Drawing.Point(112, 497);
             this.textBoxX13.Multiline = true;
             this.textBoxX13.Name = "textBoxX13";
-            this.textBoxX13.Size = new System.Drawing.Size(405, 36);
+            this.textBoxX13.Size = new System.Drawing.Size(404, 36);
             this.textBoxX13.TabIndex = 6;
             // 
             // tableLayoutPanel14
@@ -425,7 +425,7 @@
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 1;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(405, 85);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(404, 85);
             this.tableLayoutPanel14.TabIndex = 11;
             // 
             // labelX19
@@ -437,9 +437,9 @@
             this.labelX19.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labelX19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX19.ForeColor = System.Drawing.Color.Black;
-            this.labelX19.Location = new System.Drawing.Point(165, 59);
+            this.labelX19.Location = new System.Drawing.Point(164, 59);
             this.labelX19.Name = "labelX19";
-            this.labelX19.Size = new System.Drawing.Size(75, 23);
+            this.labelX19.Size = new System.Drawing.Size(74, 23);
             this.labelX19.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
             this.labelX19.TabIndex = 1;
             this.labelX19.Text = "NGÀY SINH";
@@ -451,9 +451,9 @@
             this.dateTimePicker2.Enabled = false;
             this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.ForeColor = System.Drawing.Color.Black;
-            this.dateTimePicker2.Location = new System.Drawing.Point(246, 55);
+            this.dateTimePicker2.Location = new System.Drawing.Point(244, 55);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(156, 27);
+            this.dateTimePicker2.Size = new System.Drawing.Size(157, 27);
             this.dateTimePicker2.TabIndex = 3;
             // 
             // tableLayoutPanel15
@@ -469,7 +469,7 @@
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 1;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(156, 43);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(155, 43);
             this.tableLayoutPanel15.TabIndex = 4;
             // 
             // radioButton3
@@ -495,7 +495,7 @@
             this.radioButton4.ForeColor = System.Drawing.Color.Black;
             this.radioButton4.Location = new System.Drawing.Point(96, 19);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(57, 21);
+            this.radioButton4.Size = new System.Drawing.Size(56, 21);
             this.radioButton4.TabIndex = 1;
             this.radioButton4.Text = "Nữ";
             this.radioButton4.UseVisualStyleBackColor = true;
@@ -593,7 +593,7 @@
             this.tableLayoutPanel16.RowCount = 1;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(405, 48);
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(404, 48);
             this.tableLayoutPanel16.TabIndex = 17;
             // 
             // comboBox2
@@ -610,7 +610,7 @@
             "Nhân viên"});
             this.comboBox2.Location = new System.Drawing.Point(3, 8);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(156, 37);
+            this.comboBox2.Size = new System.Drawing.Size(155, 37);
             this.comboBox2.TabIndex = 0;
             // 
             // flowLayoutPanel3
@@ -622,7 +622,7 @@
             this.flowLayoutPanel3.ForeColor = System.Drawing.Color.Black;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(112, 717);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(405, 85);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(404, 85);
             this.flowLayoutPanel3.TabIndex = 19;
             // 
             // button4
@@ -782,7 +782,7 @@
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.382611F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.63959F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.9778F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel8.Controls.Add(this.labelX9, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.txbMADV, 2, 0);
             this.tableLayoutPanel8.Controls.Add(this.labelX10, 1, 1);
@@ -842,7 +842,7 @@
             this.txbMADV.Location = new System.Drawing.Point(112, 43);
             this.txbMADV.Multiline = true;
             this.txbMADV.Name = "txbMADV";
-            this.txbMADV.Size = new System.Drawing.Size(405, 34);
+            this.txbMADV.Size = new System.Drawing.Size(404, 34);
             this.txbMADV.TabIndex = 1;
             // 
             // labelX10
@@ -875,7 +875,7 @@
             this.txbTENDV.Location = new System.Drawing.Point(112, 121);
             this.txbTENDV.Multiline = true;
             this.txbTENDV.Name = "txbTENDV";
-            this.txbTENDV.Size = new System.Drawing.Size(405, 36);
+            this.txbTENDV.Size = new System.Drawing.Size(404, 36);
             this.txbTENDV.TabIndex = 3;
             // 
             // flowLayoutPanel2
@@ -887,7 +887,7 @@
             this.flowLayoutPanel2.ForeColor = System.Drawing.Color.Black;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(112, 645);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(405, 79);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(404, 79);
             this.flowLayoutPanel2.TabIndex = 19;
             // 
             // btnThemDv
@@ -899,6 +899,7 @@
             this.btnThemDv.TabIndex = 18;
             this.btnThemDv.Text = "Thêm";
             this.btnThemDv.UseVisualStyleBackColor = true;
+            this.btnThemDv.Click += new System.EventHandler(this.btnThemDv_Click);
             // 
             // btnXoaDv
             // 
@@ -909,6 +910,7 @@
             this.btnXoaDv.TabIndex = 19;
             this.btnXoaDv.Text = "Xóa";
             this.btnXoaDv.UseVisualStyleBackColor = true;
+            this.btnXoaDv.Click += new System.EventHandler(this.btnXoaDv_Click);
             // 
             // btnSuaDv
             // 
@@ -919,6 +921,7 @@
             this.btnSuaDv.TabIndex = 20;
             this.btnSuaDv.Text = "Sửa";
             this.btnSuaDv.UseVisualStyleBackColor = true;
+            this.btnSuaDv.Click += new System.EventHandler(this.btnSuaDv_Click);
             // 
             // labelX11
             // 
@@ -966,7 +969,7 @@
             this.txbGIADV2.Location = new System.Drawing.Point(112, 283);
             this.txbGIADV2.Multiline = true;
             this.txbGIADV2.Name = "txbGIADV2";
-            this.txbGIADV2.Size = new System.Drawing.Size(405, 36);
+            this.txbGIADV2.Size = new System.Drawing.Size(404, 36);
             this.txbGIADV2.TabIndex = 23;
             // 
             // txbMANV2
@@ -983,7 +986,7 @@
             this.txbMANV2.Location = new System.Drawing.Point(112, 203);
             this.txbMANV2.Multiline = true;
             this.txbMANV2.Name = "txbMANV2";
-            this.txbMANV2.Size = new System.Drawing.Size(405, 36);
+            this.txbMANV2.Size = new System.Drawing.Size(404, 36);
             this.txbMANV2.TabIndex = 24;
             // 
             // dgvDICHVU
@@ -1020,7 +1023,7 @@
             this.dgvDICHVU.RowTemplate.Height = 24;
             this.dgvDICHVU.Size = new System.Drawing.Size(1282, 727);
             this.dgvDICHVU.TabIndex = 1;
-            this.dgvDICHVU.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDichVU_CellClick);
+            this.dgvDICHVU.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDichVU_CellClick);
             // 
             // MADV
             // 
@@ -1216,7 +1219,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.382611F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.63959F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.9778F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel2.Controls.Add(this.textBoxX6, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.labelX1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.txbMANV, 2, 0);
@@ -1259,7 +1262,7 @@
             this.textBoxX6.Border.Class = "TextBoxBorder";
             this.textBoxX6.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX6.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX6.Location = new System.Drawing.Point(523, 3);
+            this.textBoxX6.Location = new System.Drawing.Point(522, 3);
             this.textBoxX6.Multiline = true;
             this.textBoxX6.Name = "textBoxX6";
             this.textBoxX6.Size = new System.Drawing.Size(1, 36);
@@ -1298,7 +1301,7 @@
             this.txbMANV.Location = new System.Drawing.Point(112, 43);
             this.txbMANV.Multiline = true;
             this.txbMANV.Name = "txbMANV";
-            this.txbMANV.Size = new System.Drawing.Size(405, 34);
+            this.txbMANV.Size = new System.Drawing.Size(404, 34);
             this.txbMANV.TabIndex = 1;
             // 
             // labelX2
@@ -1331,7 +1334,7 @@
             this.txbHoTen.Location = new System.Drawing.Point(112, 121);
             this.txbHoTen.Multiline = true;
             this.txbHoTen.Name = "txbHoTen";
-            this.txbHoTen.Size = new System.Drawing.Size(405, 36);
+            this.txbHoTen.Size = new System.Drawing.Size(404, 36);
             this.txbHoTen.TabIndex = 3;
             // 
             // txbDiaChi
@@ -1348,7 +1351,7 @@
             this.txbDiaChi.Location = new System.Drawing.Point(112, 283);
             this.txbDiaChi.Multiline = true;
             this.txbDiaChi.Name = "txbDiaChi";
-            this.txbDiaChi.Size = new System.Drawing.Size(405, 36);
+            this.txbDiaChi.Size = new System.Drawing.Size(404, 36);
             this.txbDiaChi.TabIndex = 5;
             // 
             // txbSDT
@@ -1365,7 +1368,7 @@
             this.txbSDT.Location = new System.Drawing.Point(112, 363);
             this.txbSDT.Multiline = true;
             this.txbSDT.Name = "txbSDT";
-            this.txbSDT.Size = new System.Drawing.Size(405, 36);
+            this.txbSDT.Size = new System.Drawing.Size(404, 36);
             this.txbSDT.TabIndex = 8;
             // 
             // txtbChucVu
@@ -1382,7 +1385,7 @@
             this.txtbChucVu.Location = new System.Drawing.Point(112, 443);
             this.txtbChucVu.Multiline = true;
             this.txtbChucVu.Name = "txtbChucVu";
-            this.txtbChucVu.Size = new System.Drawing.Size(405, 36);
+            this.txtbChucVu.Size = new System.Drawing.Size(404, 36);
             this.txtbChucVu.TabIndex = 6;
             // 
             // tableLayoutPanel3
@@ -1400,7 +1403,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(405, 76);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(404, 76);
             this.tableLayoutPanel3.TabIndex = 11;
             // 
             // labelX4
@@ -1412,9 +1415,9 @@
             this.labelX4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX4.ForeColor = System.Drawing.Color.Black;
-            this.labelX4.Location = new System.Drawing.Point(165, 50);
+            this.labelX4.Location = new System.Drawing.Point(164, 50);
             this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(75, 23);
+            this.labelX4.Size = new System.Drawing.Size(74, 23);
             this.labelX4.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
             this.labelX4.TabIndex = 1;
             this.labelX4.Text = "NGÀY SINH";
@@ -1426,9 +1429,9 @@
             this.dtpNgaySinh.Enabled = false;
             this.dtpNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgaySinh.ForeColor = System.Drawing.Color.Black;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(246, 46);
+            this.dtpNgaySinh.Location = new System.Drawing.Point(244, 46);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(156, 27);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(157, 27);
             this.dtpNgaySinh.TabIndex = 3;
             // 
             // tableLayoutPanel4
@@ -1444,7 +1447,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(156, 43);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(155, 43);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
             // chkNam
@@ -1470,7 +1473,7 @@
             this.chkNu.ForeColor = System.Drawing.Color.Black;
             this.chkNu.Location = new System.Drawing.Point(96, 19);
             this.chkNu.Name = "chkNu";
-            this.chkNu.Size = new System.Drawing.Size(57, 21);
+            this.chkNu.Size = new System.Drawing.Size(56, 21);
             this.chkNu.TabIndex = 1;
             this.chkNu.Text = "Nữ";
             this.chkNu.UseVisualStyleBackColor = true;
@@ -1568,7 +1571,7 @@
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(405, 48);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(404, 48);
             this.tableLayoutPanel5.TabIndex = 17;
             // 
             // cbRole
@@ -1585,7 +1588,7 @@
             "Nhân viên"});
             this.cbRole.Location = new System.Drawing.Point(3, 8);
             this.cbRole.Name = "cbRole";
-            this.cbRole.Size = new System.Drawing.Size(156, 37);
+            this.cbRole.Size = new System.Drawing.Size(155, 37);
             this.cbRole.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -1597,7 +1600,7 @@
             this.flowLayoutPanel1.ForeColor = System.Drawing.Color.Black;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(112, 645);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(405, 79);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(404, 79);
             this.flowLayoutPanel1.TabIndex = 19;
             // 
             // btnThem

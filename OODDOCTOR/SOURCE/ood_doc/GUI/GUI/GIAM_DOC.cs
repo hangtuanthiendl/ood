@@ -19,6 +19,7 @@ namespace GUI
     public partial class GIAM_DOC : MetroAppForm
     {
         int Select = -1;
+        int Select2 = -1;
         BUS_NhanVien nv = new BUS_NhanVien();
         BUS_DichVu dv = new BUS_DichVu();
 
@@ -134,6 +135,7 @@ namespace GUI
         //Tab Dịch Vụ
         private void dgvDichVU_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            Select2 = Convert.ToInt32(dgvDICHVU.Rows[e.RowIndex].Cells[0].Value);
             if (e.RowIndex >= 0)
             {
                 txbMADV.Text = dgvDICHVU.Rows[e.RowIndex].Cells[0].Value.ToString();
@@ -143,53 +145,38 @@ namespace GUI
                             
             }
         }
-        //==================================================================================================
-        //CÁC HÀM XỬ LÍ KHÁC
-        //Các hàm xử lí enabled
-        void XuliCacCongCu(int a)
+
+        private void btnThemDv_Click(object sender, EventArgs e)
         {
-            if (a == 1)
+            if (btnThemDv.Text == "Thêm")
             {
-                txbDiaChi.Enabled = true;
-                txbHoTen.Enabled = true;
-                txbSDT.Enabled = true;
-                txtbChucVu.Enabled = true;
-                chkNam.Enabled = true;
-                chkNu.Enabled = true;
-                dtpNgaySinh.Enabled = true;
-                cbRole.Enabled = true;
-                dgvNHANVIEN.Enabled = false;
+                btnThemDv.Text = "Lưu";
+                btnXoa.Enabled = false;
+                btnSua.Enabled = false;
+                XuliCacCongCuTabDichVu(1);
+                txbMADV.Text = "######";
             }
             else
             {
-                txbDiaChi.Enabled = false;
-                txbHoTen.Enabled = false;
-                txbSDT.Enabled = false;
-                txtbChucVu.Enabled = false;
-                chkNam.Enabled = false;
-                chkNu.Enabled = false;
-                dtpNgaySinh.Enabled = false;
-                cbRole.Enabled = false;
-                dgvNHANVIEN.Enabled = true;
+                btnThemDv.Text = "Thêm";
+                btnXoa.Enabled = true;
+                btnSua.Enabled = true;
+                dv.ThemDichVu(txbTENDV.Text, Convert.ToInt32(txbMANV2.Text), Convert.ToDouble(txbGIADV2.Text));
+                this.LoadLaiBangDichVu();
+                XuliCacCongCuTabDichVu(0);
             }
         }
-        //Các hàm load bảng
-        void LoadLaibangNhanVien()
+
+        private void btnXoaDv_Click(object sender, EventArgs e)
         {
-            dTOProfileBindingSource.Clear();
-            list = nv.DanhSachNhanVien();
-            for (int i = 0; i < list.Count; i++)
+            if (Select2 > 0)
             {
-                dTOProfileBindingSource.Add(list[i]);
-            }
-        }
-        void LoadLaiBangDichVu()
-        {
-            dTODichVuBindingSource.Clear();
-            listdv = dv.DanhSachDichvu(); ;
-            for (int i = 0; i < listdv.Count; i++)
-            {
-                dTODichVuBindingSource.Add(listdv[i]);
+                if (MessageBox.Show("Bạn có muốn xóa dịch vụ có mã: " + Select2, "Hãy cẩn thận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    dv.XoaDichVu(Select2);
+                    dTOProfileBindingSource.Clear();
+                    this.LoadLaiBangDichVu();
+                }
             }
         }
 
@@ -229,5 +216,95 @@ namespace GUI
             }
 
         }
+
+        private void btnSuaDv_Click(object sender, EventArgs e)
+        {
+            if (btnSuaDv.Text == "Sửa")
+            {
+                btnSuaDv.Text = "Lưu";
+                btnXoaDv.Enabled = false;
+                btnThemDv.Enabled = false;
+                this.XuliCacCongCuTabDichVu(1);
+            }
+            else
+            {
+                btnSuaDv.Text = "Sửa";
+                btnXoaDv.Enabled = true;
+                btnThemDv.Enabled = true;
+                dv.SuaDichVu(Convert.ToInt32(txbMADV.Text), txbTENDV.Text, Convert.ToInt32(txbMANV2.Text), Convert.ToDouble(txbGIADV2.Text));
+                this.XuliCacCongCuTabDichVu(0);
+                this.LoadLaiBangDichVu();
+            }
+        }
+        //==================================================================================================
+        //CÁC HÀM XỬ LÍ KHÁC
+        //Các hàm xử lí enabled
+        void XuliCacCongCu(int a)
+        {
+            if (a == 1)
+            {
+                txbDiaChi.Enabled = true;
+                txbHoTen.Enabled = true;
+                txbSDT.Enabled = true;
+                txtbChucVu.Enabled = true;
+                chkNam.Enabled = true;
+                chkNu.Enabled = true;
+                dtpNgaySinh.Enabled = true;
+                cbRole.Enabled = true;
+                dgvNHANVIEN.Enabled = false;
+            }
+            else
+            {
+                txbDiaChi.Enabled = false;
+                txbHoTen.Enabled = false;
+                txbSDT.Enabled = false;
+                txtbChucVu.Enabled = false;
+                chkNam.Enabled = false;
+                chkNu.Enabled = false;
+                dtpNgaySinh.Enabled = false;
+                cbRole.Enabled = false;
+                dgvNHANVIEN.Enabled = true;
+            }
+        }
+
+        void XuliCacCongCuTabDichVu(int a)
+        {
+            if (a == 1)
+            {
+                txbMADV.Enabled = true;
+                txbTENDV.Enabled = true;
+                txbMANV2.Enabled = true;
+                txbGIADV2.Enabled = true;
+                dgvDICHVU.Enabled = false;
+            }
+            else
+            {
+                txbMADV.Enabled = false;
+                txbTENDV.Enabled = false;
+                txbMANV2.Enabled = false;
+                txbGIADV2.Enabled = false;
+                dgvDICHVU.Enabled = true;
+            }
+        }
+        //Các hàm load bảng
+        void LoadLaibangNhanVien()
+        {
+            dTOProfileBindingSource.Clear();
+            list = nv.DanhSachNhanVien();
+            for (int i = 0; i < list.Count; i++)
+            {
+                dTOProfileBindingSource.Add(list[i]);
+            }
+        }
+        void LoadLaiBangDichVu()
+        {
+            dTODichVuBindingSource.Clear();
+            listdv = dv.DanhSachDichvu(); ;
+            for (int i = 0; i < listdv.Count; i++)
+            {
+                dTODichVuBindingSource.Add(listdv[i]);
+            }
+        }
+
     }
 }

@@ -93,7 +93,7 @@ namespace DAL
             }
         }
         //=======================================================================================
-        //Các hàm xử lí trên hân viên
+        //Các hàm xử lí trên nhân viên
         public void ThemNhanVien(string TENNV, string NGAYSINH, Boolean GTINH, String DIACHI, 
             int SDT, string CHUCVU, int enabled, int role, string temppassword)
         {          
@@ -241,11 +241,98 @@ namespace DAL
 
         //=======================================================================================
         //Các hàm xử lí trên dịch vụ
+        public void ThemDichVu(string _TENDV1, long _MANV1, double _GIADV1)
+        {
+            string query2 = "insert into dichvu(`TENDICHVU`,`MANV`, `GIADICHVU`) values('"+_TENDV1+"',"+_MANV1+","+_GIADV1+");";
 
+            if (this.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query2, connection);
+                cmd.Connection = connection;
+                MySqlTransaction myTrans;
+                myTrans = connection.BeginTransaction(IsolationLevel.ReadCommitted);
+                cmd.Transaction = myTrans;
+                try
+                {
+                    //cmd.CommandText = query;
+                    //cmd.ExecuteNonQuery();
+                    cmd.CommandText = query2;
+                    cmd.ExecuteNonQuery();
+                    myTrans.Commit();
+                    MessageBox.Show("Thành công!");
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Thêm không thành công!");
+                    myTrans.Rollback();
+                    Console.WriteLine(e.ToString());
+                    Console.WriteLine("Neither record was written to database.");
+                }
+                finally
+                {
+                    this.CloseConnection();
+                }
+
+            }
+        }
+
+        public void SuaDichVu(long _MADV, string _TENDV1, long _MANV1, double _GIADV1)
+        {
+            string query2 = "update dichvu set TENDICHVU = '"+_TENDV1+"', MANV = '"+_MANV1+"', GIADICHVU = '"+_GIADV1+"' where MADV = " + _MADV ;
+
+            if (this.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query2, connection);
+                cmd.Connection = connection;
+                MySqlTransaction myTrans;
+                myTrans = connection.BeginTransaction(IsolationLevel.ReadCommitted);
+                cmd.Transaction = myTrans;
+                try
+                {
+                    //cmd.CommandText = query;
+                    //cmd.ExecuteNonQuery();
+                    cmd.CommandText = query2;
+                    cmd.ExecuteNonQuery();
+                    myTrans.Commit();
+                    MessageBox.Show("Thành công!");
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Sửa không thành công!");
+                    myTrans.Rollback();
+                    Console.WriteLine(e.ToString());
+                    Console.WriteLine("Neither record was written to database.");
+                }
+                finally
+                {
+                    this.CloseConnection();
+                }
+
+            }
+        }
+
+        public void XoaDichVu(int a)
+        {
+            string query = " UPDATE dichvu SET enabled = -1 WHERE MADV = " + a.ToString();
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandText = query;
+                cmd.Connection = connection;
+
+                cmd.ExecuteNonQuery();
+
+                this.CloseConnection();
+            }
+        }
 
         public List<DTO_DichVu> DanhSachDichvu()
         {
-            string query = "SELECT * FROM dichvu";
+            string query = "SELECT * FROM dichvu where enabled > -1";
 
             //Create a list to store the result
             List<DTO_DichVu> list = new List<DTO_DichVu>();
@@ -283,9 +370,11 @@ namespace DAL
                 return list;
             }
         }
+
+
         //Kết thúc các hàm xử lí dành cho dịch vụ
 
-
+        
 
         //=======================================================================================
         public DTO_Profile KiemTraUser(string username, string password)
