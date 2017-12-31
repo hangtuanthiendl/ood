@@ -240,7 +240,7 @@ namespace DAL
 
 
         //=======================================================================================
-        //Các hàm xử lí trên dịch vụ
+        //Các hàm xử lí với dịch vụ
         public void ThemDichVu(string _TENDV1, long _MANV1, double _GIADV1)
         {
             string query2 = "insert into dichvu(`TENDICHVU`,`MANV`, `GIADICHVU`) values('"+_TENDV1+"',"+_MANV1+","+_GIADV1+");";
@@ -374,7 +374,51 @@ namespace DAL
 
         //Kết thúc các hàm xử lí dành cho dịch vụ
 
-        
+
+        //=======================================================================================
+        //Các hàm xử lí với thuốc
+        public List<DTO_Thuoc> DanhSachThuoc()
+        {
+            string query = "SELECT * FROM thuoc where enabled > -1";
+
+            //Create a list to store the result
+            List<DTO_Thuoc> list = new List<DTO_Thuoc>();
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                //Create a data reader and Execute the command
+               MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                //Read the data and store them in the list
+                while (dataReader.Read())
+                {
+                    DTO_Thuoc thuoc = new DTO_Thuoc(
+                    Convert.ToInt64(dataReader["MATHUOC"]),
+                    Convert.ToString(dataReader["TENTHUOC"]),
+                     Convert.ToInt32(dataReader["SOLUONGCON"]),
+                     Convert.ToDouble(dataReader["DONGIA"]),
+                     Convert.ToInt64(dataReader["MANV"]));
+                    list.Add(thuoc);
+                }
+
+                //close Data Reader
+                dataReader.Close();
+
+                //close Connection
+                this.CloseConnection();
+
+                //return list to be displayed
+                return list;
+            }
+            else
+            {
+                return list;
+            }
+        }
+
 
         //=======================================================================================
         public DTO_Profile KiemTraUser(string username, string password)

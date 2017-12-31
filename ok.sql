@@ -51,7 +51,7 @@ CREATE TABLE `Benhnhan` (
 `CTY` longtext NULL,
 
 `TSBENH` longtext NULL,
-`enabled` int DEFAULT 0,
+`enabled` int DEFAULT 1,
 
 PRIMARY KEY (`MABN`) 
 
@@ -155,26 +155,16 @@ CREATE TABLE `thuoc` (
 
 `SOLUONGCON` varchar(255) NULL,
 
+`DONGIA` double NULL,
+
+`MANV` int(5) unsigned zerofill,
+`enabled` int DEFAULT 1,
+
 PRIMARY KEY (`MATHUOC`) 
 
 );
 
 
-
-
-
-
-CREATE TABLE `dongiathuoc` (
-
-`MANV` int(5) unsigned zerofill,
-
-`MATHUOC` int(5) unsigned zerofill,
-
-`DONGIA` double NULL,
-
-PRIMARY KEY (`MANV`) 
-
-);
 
 
 
@@ -187,6 +177,8 @@ CREATE TABLE `dichvu` (
 `MANV` int(5) unsigned zerofill,
 
 `GIADICHVU` double NULL,
+
+`enabled` int DEFAULT 1,
 
 PRIMARY KEY (`MADV`, `MANV`) 
 
@@ -215,9 +207,8 @@ ALTER TABLE `ctdonthuoc` ADD CONSTRAINT `THUOC` FOREIGN KEY (`MATHUOC`) REFERENC
 
 ALTER TABLE `cthdtk` ADD CONSTRAINT `MADV` FOREIGN KEY (`MADICHVU`) REFERENCES `dichvu` (`MADV`);
 
-ALTER TABLE `dongiathuoc` ADD CONSTRAINT `MATHUOC` FOREIGN KEY (`MATHUOC`) REFERENCES `thuoc` (`MATHUOC`);
 
-ALTER TABLE `dongiathuoc` ADD CONSTRAINT `manv` FOREIGN KEY (`MANV`) REFERENCES `profile` (`MANV`);
+ALTER TABLE `thuoc` ADD CONSTRAINT `manv` FOREIGN KEY (`MANV`) REFERENCES `profile` (`MANV`);
 
 
 ALTER TABLE `dichvu` ADD CONSTRAINT `MANV_DGDV` FOREIGN KEY (`MANV`) REFERENCES `profile` (`MANV`);
@@ -235,15 +226,24 @@ insert into profile(TENNV, NGAYSINH, GTINH, DIACHI, SDT, CHUCVU, enabled,role,te
 insert into profile(TENNV, NGAYSINH, GTINH, DIACHI, SDT, CHUCVU, enabled,role,temppassword) values('Lê Văn Cường','12-01-1998',1,'12323hjgjhg',099898, 'h',1,0,'123456');
 select * from `profile`;
 
-
+/*
 update profile set TENNV = "+TENNV +", NGAYSINH = "12/01/1996", GTINH = true, DIACHI = "+DIACHI+", SDT = 01234567, CHUCVU = "+CHUCVU+", enabled = 1,role = "1",temppassword = "+temppassword+" where MANV = "2"
 ;
 
-
+*/
 SELECT * FROM profile WHERE MANV = 2 and temppassword ='123456';
 
 /*DichVu*/
 
 insert into dichvu(`TENDICHVU`,`MANV`, `GIADICHVU`) values('Khám tổng quát',1,200000);
+insert into dichvu(`TENDICHVU`,`MANV`, `GIADICHVU`) values('Khám nội soi 1',1,300000);
+insert into dichvu(`TENDICHVU`,`MANV`, `GIADICHVU`) values('Siêu âm lồng ngực',2,400000);
 
 SELECT * from dichvu;
+
+/*Thuoc*/
+
+insert into thuoc(TENTHUOC,SOLUONGCON,DONGIA, MANV) values ('Paracetamol', 50, 50000,1);
+insert into thuoc(TENTHUOC,SOLUONGCON,DONGIA, MANV) values ('Acerin', 100, 80000,1);
+insert into thuoc(TENTHUOC,SOLUONGCON,DONGIA,MANV) values ('Benzel Dioxit', 50, 50000,1);
+select * from thuoc;

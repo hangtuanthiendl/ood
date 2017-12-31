@@ -12,6 +12,20 @@ namespace DTO
         private string _TENTHUOC;
         private int _SOLUONGCON;
         private double _DONGIA;
+        private long _MANV;
+        public DTO_Thuoc(long _MATHUOC,string _TENTHUOC,int _SOLUONGCON,double _DONGIA,long _MANV)
+        {
+            this._MATHUOC = _MATHUOC;
+            this._TENTHUOC = _TENTHUOC;
+            this._SOLUONGCON = _SOLUONGCON;
+            this._DONGIA = _DONGIA;
+            this._MANV = _MANV;
+        }
+        public long MANV
+        {
+            get { return _MANV; }
+            set { _MANV = value; }
+        }
 
         public double DONGIA
         {

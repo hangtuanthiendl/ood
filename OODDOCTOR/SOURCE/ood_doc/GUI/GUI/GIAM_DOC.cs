@@ -20,11 +20,13 @@ namespace GUI
     {
         int Select = -1;
         int Select2 = -1;
+        int Select3 = -1;
         BUS_NhanVien nv = new BUS_NhanVien();
         BUS_DichVu dv = new BUS_DichVu();
-
+        BUS_Thuoc thuoc = new BUS_Thuoc();
         List<DTO_Profile> list;
         List<DTO_DichVu> listdv;
+        List<DTO_Thuoc> listthuoc;
         DTO_Profile prf;
         public GIAM_DOC(DTO_Profile prf1)
         {
@@ -35,6 +37,7 @@ namespace GUI
             dtpNgaySinh.CustomFormat = "dd-MM-yyyy";
             dtpNgaySinh.ShowUpDown = true;
             LoadLaiBangDichVu();
+            LoadLaiThuoc();
         }
 
         private void NHANVIEN_Load(object sender, EventArgs e)
@@ -305,6 +308,16 @@ namespace GUI
                 dTODichVuBindingSource.Add(listdv[i]);
             }
         }
+        void LoadLaiThuoc()
+        {
+            dTOThuocBindingSource.Clear();
+            listthuoc = thuoc.DanhSachThuoc(); ;
+            for (int i = 0; i < listthuoc.Count; i++)
+            {
+                dTOThuocBindingSource.Add(listthuoc[i]);
+            }
+        }
+
 
     }
 }
