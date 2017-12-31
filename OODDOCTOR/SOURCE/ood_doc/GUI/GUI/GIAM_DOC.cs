@@ -134,7 +134,44 @@ namespace GUI
             }
         }
 
-        // //==================================================================================================
+        private void dgvNHANVIEN_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                Select = Convert.ToInt32(dgvNHANVIEN.Rows[e.RowIndex].Cells[0].Value);
+                txbMANV.Text = dgvNHANVIEN.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txbHoTen.Text = dgvNHANVIEN.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txbDiaChi.Text = dgvNHANVIEN.Rows[e.RowIndex].Cells[4].Value.ToString();
+                txbSDT.Text = dgvNHANVIEN.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtbChucVu.Text = dgvNHANVIEN.Rows[e.RowIndex].Cells[1].Value.ToString();
+                //Kiểm tra giới tính
+                if (Convert.ToBoolean(dgvNHANVIEN.Rows[e.RowIndex].Cells[5].Value.ToString()) == true)
+                {
+                    chkNam.Checked = true;
+                }
+                else
+                {
+                    chkNu.Checked = true;
+                }
+
+                //Kiểm tra role
+                if (Convert.ToInt32(dgvNHANVIEN.Rows[e.RowIndex].Cells[8].Value.ToString()) == 1)
+                {
+                    cbRole.SelectedIndex = 1;
+                }
+                if (Convert.ToInt32(dgvNHANVIEN.Rows[e.RowIndex].Cells[8].Value.ToString()) == 2)
+                {
+                    cbRole.SelectedIndex = 2;
+                }
+                if (Convert.ToInt32(dgvNHANVIEN.Rows[e.RowIndex].Cells[8].Value.ToString()) == 3)
+                {
+                    cbRole.SelectedIndex = 3;
+                }
+            }
+
+        }
+
+        //==================================================================================================
         //Tab Dịch Vụ
         private void dgvDichVU_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -183,43 +220,6 @@ namespace GUI
             }
         }
 
-        private void dgvNHANVIEN_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                Select = Convert.ToInt32(dgvNHANVIEN.Rows[e.RowIndex].Cells[0].Value);
-                txbMANV.Text = dgvNHANVIEN.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txbHoTen.Text = dgvNHANVIEN.Rows[e.RowIndex].Cells[1].Value.ToString();
-                txbDiaChi.Text = dgvNHANVIEN.Rows[e.RowIndex].Cells[4].Value.ToString();
-                txbSDT.Text = dgvNHANVIEN.Rows[e.RowIndex].Cells[3].Value.ToString();
-                txtbChucVu.Text = dgvNHANVIEN.Rows[e.RowIndex].Cells[1].Value.ToString();
-                //Kiểm tra giới tính
-                if (Convert.ToBoolean(dgvNHANVIEN.Rows[e.RowIndex].Cells[5].Value.ToString()) == true)
-                {
-                    chkNam.Checked = true;
-                }
-                else
-                {
-                    chkNu.Checked = true;
-                }
-
-                //Kiểm tra role
-                if (Convert.ToInt32(dgvNHANVIEN.Rows[e.RowIndex].Cells[8].Value.ToString()) == 1)
-                {
-                    cbRole.SelectedIndex = 1;
-                }
-                if (Convert.ToInt32(dgvNHANVIEN.Rows[e.RowIndex].Cells[8].Value.ToString()) == 2)
-                {
-                    cbRole.SelectedIndex = 2;
-                }
-                if (Convert.ToInt32(dgvNHANVIEN.Rows[e.RowIndex].Cells[8].Value.ToString()) == 3)
-                {
-                    cbRole.SelectedIndex = 3;
-                }
-            }
-
-        }
-
         private void btnSuaDv_Click(object sender, EventArgs e)
         {
             if (btnSuaDv.Text == "Sửa")
@@ -237,6 +237,75 @@ namespace GUI
                 dv.SuaDichVu(Convert.ToInt32(txbMADV.Text), txbTENDV.Text, Convert.ToInt32(txbMANV2.Text), Convert.ToDouble(txbGIADV2.Text));
                 this.XuliCacCongCuTabDichVu(0);
                 this.LoadLaiBangDichVu();
+            }
+        }
+
+        //==================================================================================================
+        //Tab Thuốc
+        private void btnThemThuoc_Click(object sender, EventArgs e)
+        {
+            if (btnThemThuoc.Text == "Thêm")
+            {
+                btnThemThuoc.Text = "Lưu";
+                btnXoaThuoc.Enabled = false;
+                btnSuaThuoc.Enabled = false;
+                this.XuliCacCongCuThuoc(1);
+                txbMATHUOC.Text = "######";
+                txbMANV3.Text = prf.MANV.ToString();
+            }
+            else
+            {
+                btnThemThuoc.Text = "Thêm";
+                btnXoaThuoc.Enabled = true;
+                btnSuaThuoc.Enabled = true;
+                thuoc.ThemThuoc(txbTENTHUOC.Text, Convert.ToInt32(txbSOLUONG.Text), Convert.ToDouble(txbDONGIA.Text), prf.MANV);
+                //dv.ThemDichVu(txbTENDV.Text, Convert.ToInt32(txbMANV2.Text), Convert.ToDouble(txbGIADV2.Text));
+                this.LoadLaiThuoc();
+                this.XuliCacCongCuThuoc(0);
+            }
+        }
+        private void btnXoaThuoc_Click(object sender, EventArgs e)
+        {
+            if (Select3 > 0)
+            {
+                if (MessageBox.Show("Bạn có muốn xóa dịch vụ có mã: " + Select3, "Hãy cẩn thận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    thuoc.XoaThuoc(Select3);
+                    dTOThuocBindingSource.Clear();
+                    this.LoadLaiThuoc();
+                }
+            }
+        }
+        private void btnSuaThuoc_Click(object sender, EventArgs e)
+        {
+            if (btnSuaThuoc.Text == "Sửa")
+            {
+                btnSuaThuoc.Text = "Lưu";
+                btnXoaThuoc.Enabled = false;
+                btnThemThuoc.Enabled = false;
+                this.XuliCacCongCuThuoc(1);
+            }
+            else
+            {
+                btnSuaThuoc.Text = "Sửa";
+                btnXoaThuoc.Enabled = true;
+                btnThemThuoc.Enabled = true;
+                thuoc.SuaThuoc(Convert.ToInt32(txbMATHUOC.Text), txbTENTHUOC.Text, Convert.ToInt32(txbSOLUONG.Text), Convert.ToDouble(txbDONGIA.Text), Convert.ToInt32(txbMANV3.Text));
+                this.XuliCacCongCuThuoc(0);
+                this.LoadLaiThuoc();
+            }
+        }
+        private void dgvTHUOC_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Select3 = Convert.ToInt32(dgvTHUOC.Rows[e.RowIndex].Cells[0].Value);
+            if (e.RowIndex >= 0)
+            {
+                txbMATHUOC.Text = dgvTHUOC.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txbTENTHUOC.Text = dgvTHUOC.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txbSOLUONG.Text = dgvTHUOC.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txbDONGIA.Text = dgvTHUOC.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txbMANV3.Text = dgvTHUOC.Rows[e.RowIndex].Cells[4].Value.ToString();
+
             }
         }
         //==================================================================================================
@@ -289,6 +358,27 @@ namespace GUI
                 dgvDICHVU.Enabled = true;
             }
         }
+        void XuliCacCongCuThuoc(int a)
+        {
+            if (a == 1)
+            {
+                //txbMATHUOC.Enabled = true;
+                txbTENTHUOC.Enabled = true;
+                txbSOLUONG.Enabled = true;
+                txbDONGIA.Enabled = true;
+                //txbMANV3.Enabled = true;
+                dgvTHUOC.Enabled = false;
+            }
+            else
+            {
+                //txbMATHUOC.Enabled = false;
+                txbTENTHUOC.Enabled = false;
+                txbSOLUONG.Enabled = false;
+                txbDONGIA.Enabled = false;
+                //txbMANV3.Enabled = false;
+                dgvTHUOC.Enabled = true;
+            }
+        }
         //Các hàm load bảng
         void LoadLaibangNhanVien()
         {
@@ -318,6 +408,6 @@ namespace GUI
             }
         }
 
-
+        
     }
 }

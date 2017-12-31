@@ -14,5 +14,17 @@ namespace BUS
         {
             return db.DanhSachThuoc();
         }
+        public void SuaThuoc(long _MATHUOC, string _TENTHUOC, int _SOLUONGCON, double _GIA, long _MANV1)
+        {
+            db.SuaThuoc(_MATHUOC, _TENTHUOC, _SOLUONGCON, _GIA, _MANV1);
+        }
+        public void ThemThuoc(string _TENTHUOC, int _SOLUONGCON, double _GIA, long _MANV1)
+        {
+            db.ThemThuoc(_TENTHUOC, _SOLUONGCON, _GIA, _MANV1);
+        }
+        public void XoaThuoc(int a)
+        {
+            db.XoaThuoc(a);
+        }
     }
 }

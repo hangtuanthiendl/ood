@@ -237,7 +237,7 @@ namespace DAL
             }
         }
         //Kết thúc các hàm xử lí dành cho nhân viên
-
+        //=======================================END=============================================
 
         //=======================================================================================
         //Các hàm xử lí với dịch vụ
@@ -371,12 +371,97 @@ namespace DAL
             }
         }
 
-
         //Kết thúc các hàm xử lí dành cho dịch vụ
-
+        //=======================================END=============================================
 
         //=======================================================================================
         //Các hàm xử lí với thuốc
+        public void ThemThuoc(string _TENTHUOC, int _SOLUONGCON, double _GIA, long _MANV1)
+        {
+            string query2 = "insert into thuoc(TENTHUOC,SOLUONGCON,DONGIA, MANV) values ('"+_TENTHUOC+"', '"+_SOLUONGCON+"', '"+_GIA+"',"+_MANV1+");";
+
+            if (this.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query2, connection);
+                cmd.Connection = connection;
+                MySqlTransaction myTrans;
+                myTrans = connection.BeginTransaction(IsolationLevel.ReadCommitted);
+                cmd.Transaction = myTrans;
+                try
+                {
+                    cmd.CommandText = query2;
+                    cmd.ExecuteNonQuery();
+                    myTrans.Commit();
+                    MessageBox.Show("Thành công!");
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Thêm không thành công!");
+                    myTrans.Rollback();
+                    Console.WriteLine(e.ToString());
+                    Console.WriteLine("Neither record was written to database.");
+                }
+                finally
+                {
+                    this.CloseConnection();
+                }
+
+            }
+        }
+
+        public void SuaThuoc(long _MATHUOC, string _TENTHUOC, int _SOLUONGCON, double _GIA, long _MANV1)
+        {
+            string query2 = "update thuoc set TENTHUOC = '" + _TENTHUOC + "', SOLUONGCON = '" + _SOLUONGCON + "', DONGIA = '" + _GIA + "', MANV = '"+_MANV1+"' where MATHUOC = '" + _MATHUOC+"'";
+
+            if (this.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query2, connection);
+                cmd.Connection = connection;
+                MySqlTransaction myTrans;
+                myTrans = connection.BeginTransaction(IsolationLevel.ReadCommitted);
+                cmd.Transaction = myTrans;
+                try
+                {
+                    //cmd.CommandText = query;
+                    //cmd.ExecuteNonQuery();
+                    cmd.CommandText = query2;
+                    cmd.ExecuteNonQuery();
+                    myTrans.Commit();
+                    MessageBox.Show("Thành công!");
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Sửa không thành công!");
+                    myTrans.Rollback();
+                    Console.WriteLine(e.ToString());
+                    Console.WriteLine("Neither record was written to database.");
+                }
+                finally
+                {
+                    this.CloseConnection();
+                }
+
+            }
+        }
+
+        public void XoaThuoc(int a)
+        {
+            string query = " UPDATE thuoc SET enabled = -1 WHERE MATHUOC = " + a.ToString();
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandText = query;
+                cmd.Connection = connection;
+
+                cmd.ExecuteNonQuery();
+
+                this.CloseConnection();
+            }
+        }
         public List<DTO_Thuoc> DanhSachThuoc()
         {
             string query = "SELECT * FROM thuoc where enabled > -1";
@@ -418,7 +503,8 @@ namespace DAL
                 return list;
             }
         }
-
+        //Kết thúc các hàm xử lí dành cho thuốc
+        //=======================================END=============================================
 
         //=======================================================================================
         public DTO_Profile KiemTraUser(string username, string password)
