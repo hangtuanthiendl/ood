@@ -576,6 +576,175 @@ namespace DAL
                 return null;
         }
 
-       
+        public DataTable ThongKeTienKham(string NGAY1, string NGAY2)
+        {
+            string query = "select hdtk.MAHDTK , hdtk.MAPKB, hdtk.NGAYLAPHD, hdtk.THANHTIEN, profile.TENNV from `hdtk`, `profile` where NGAYLAPHD >= '" + NGAY1 + "' and  NGAYLAPHD <= '" + NGAY2 + "' and profile.MANV = hdtk.MANV";
+            //Create a list to store the result
+            DataTable table = new DataTable();
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                //Create a data reader and Execute the command
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                table.Columns.Add("MAHDTK");
+                table.Columns.Add("MAPKB");
+                table.Columns.Add("TENNV");
+                table.Columns.Add("NGAYLAPHD");
+                table.Columns.Add("THANHTIEN");
+
+                //Read the data and store them in the list
+                while (dataReader.Read())
+                {
+                    DataRow dataRow = table.NewRow();
+                    dataRow["MAHDTK"] = Convert.ToInt64(dataReader["MAHDTK"]);
+                    dataRow["MAPKB"] = Convert.ToInt64(dataReader["MAPKB"]);
+                    dataRow["TENNV"] = dataReader["TENNV"];
+                    dataRow["NGAYLAPHD"] = Convert.ToDateTime(dataReader["NGAYLAPHD"]).ToShortDateString();
+                    dataRow["THANHTIEN"] = Convert.ToInt32(dataReader["THANHTIEN"]);
+                    table.Rows.Add(dataRow);
+                }
+                //close Data Reader
+                dataReader.Close();
+
+                //close Connection
+                this.CloseConnection();
+
+                //return list to be displayed
+                return table;
+            }
+            else
+            {
+                return table;
+            }
+        }
+        public DataTable DoanhThuTienKham(int YEAR)
+        {
+            string query = "select MONTH(NGAYLAPHD) AS THANG, Sum(THANHTIEN) AS DOANHTHU from `hdtk` where YEAR(NGAYLAPHD) = '" + YEAR + "' group by MONTH(NGAYLAPHD) order by THANG";
+            //Create a list to store the result
+            DataTable table = new DataTable();
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                //Create a data reader and Execute the command
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                table.Columns.Add("THANG");
+                table.Columns.Add("DOANHTHU");
+
+                //Read the data and store them in the list
+                while (dataReader.Read())
+                {
+                    DataRow dataRow = table.NewRow();
+                    dataRow["THANG"] = Convert.ToInt32(dataReader["THANG"]);
+                    dataRow["DOANHTHU"] = Convert.ToInt32(dataReader["DOANHTHU"]);
+                    table.Rows.Add(dataRow);
+                }
+
+                //close Data Reader
+                dataReader.Close();
+
+                //close Connection
+                this.CloseConnection();
+
+                //return list to be displayed
+                return table;
+            }
+            else
+            {
+                return table;
+            }
+        }
+        public DataTable ThongKeTienThuoc(string NGAY1, string NGAY2)
+        {
+            string query = "select donthuoc.MADT , donthuoc.MAPKB, donthuoc.NGAYLAPTT, donthuoc.THANHTIEN, profile.TENNV   from `donthuoc`, `profile` where NGAYLAPTT >= '" + NGAY1 + "' and  NGAYLAPTT <= '" + NGAY2 + "' and profile.MANV = donthuoc.MANV";
+            //Create a list to store the result
+            DataTable table = new DataTable();
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                //Create a data reader and Execute the command
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                table.Columns.Add("MADT");
+                table.Columns.Add("MAPKBDT");
+                table.Columns.Add("TENNVDT");
+                table.Columns.Add("NGAYLAPTT");
+                table.Columns.Add("THANHTIENDT");
+
+                //Read the data and store them in the list
+                while (dataReader.Read())
+                {
+                    DataRow dataRow = table.NewRow();
+                    dataRow["MADT"] = Convert.ToInt64(dataReader["MADT"]);
+                    dataRow["MAPKBDT"] = Convert.ToInt64(dataReader["MAPKB"]);
+                    dataRow["TENNVDT"] = dataReader["TENNV"];
+                    dataRow["NGAYLAPTT"] = Convert.ToDateTime(dataReader["NGAYLAPTT"]).ToShortDateString();
+                    dataRow["THANHTIENDT"] = Convert.ToInt32(dataReader["THANHTIEN"]);
+                    table.Rows.Add(dataRow);
+                }
+                //close Data Reader
+                dataReader.Close();
+
+                //close Connection
+                this.CloseConnection();
+
+                //return list to be displayed
+                return table;
+            }
+            else
+            {
+                return table;
+            }
+        }
+        public DataTable DoanhThuTienThuoc(int YEAR)
+        {
+            string query = "select MONTH(NGAYLAPTT) AS THANG, Sum(THANHTIEN) AS DOANHTHU from `donthuoc` where YEAR(NGAYLAPTT) = '" + YEAR + "' group by MONTH(NGAYLAPTT) order by THANG";
+            //Create a list to store the result
+            DataTable table = new DataTable();
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                //Create a data reader and Execute the command
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                table.Columns.Add("THANG");
+                table.Columns.Add("DOANHTHU");
+
+                //Read the data and store them in the list
+                while (dataReader.Read())
+                {
+                    DataRow dataRow = table.NewRow();
+                    dataRow["THANG"] = Convert.ToInt32(dataReader["THANG"]);
+                    dataRow["DOANHTHU"] = Convert.ToInt32(dataReader["DOANHTHU"]);
+                    table.Rows.Add(dataRow);
+                }
+
+                //close Data Reader
+                dataReader.Close();
+
+                //close Connection
+                this.CloseConnection();
+
+                //return list to be displayed
+                return table;
+            }
+            else
+            {
+                return table;
+            }
+        }
     }
 }

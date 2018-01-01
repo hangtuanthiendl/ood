@@ -6,15 +6,21 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class DTO_Hdtk
+    public class DTO_Hdtk
     {
         private long _MAHDTK;
-        private int myVar;
+        private long _MANV;
+        private long _MAPKB;
+        private DateTime _NGAYLAPDT;
+        private double _THANHTIEN;
 
-        public int MyProperty
+        public DTO_Hdtk(long MAHDTK, long MAPKB, long MANV, DateTime NGAYLAPDT, double THANHTIEN)
         {
-            get { return myVar; }
-            set { myVar = value; }
+            _MAHDTK = MAHDTK;
+            _MAPKB = MAPKB;
+            _MANV = MANV;
+            _NGAYLAPDT = NGAYLAPDT;
+            _THANHTIEN = THANHTIEN;
         }
 
         public long MAHDTK
@@ -22,6 +28,26 @@ namespace DTO
             get { return _MAHDTK; }
             set { _MAHDTK = value; }
         }
+        public long MAPKB
+        {
+            get { return _MAPKB; }
+            set { _MAPKB = value; }
+        }
+        public long MANV
+        {
+            get { return _MANV; }
+            set { _MANV = value; }
+        }
+        public double THANHTIEN
+        {
+            get { return _THANHTIEN; }
+            set { _THANHTIEN = value; }
+        }
 
+        public DateTime NGAYLAPDT
+        {
+            get { return _NGAYLAPDT; }
+            set { _NGAYLAPDT = value; }
+        }
     }
 }
