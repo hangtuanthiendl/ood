@@ -18,9 +18,9 @@ namespace GUI
 {
     public partial class GIAM_DOC : MetroAppForm
     {
-        int Select = -1;
-        int Select2 = -1;
-        int Select3 = -1;
+        private int Select0 = -1;
+        private int Select2 = -1;
+        private int Select3 = -1;
         BUS_NhanVien nv = new BUS_NhanVien();
         BUS_DichVu dv = new BUS_DichVu();
         BUS_Thuoc thuoc = new BUS_Thuoc();
@@ -93,11 +93,11 @@ namespace GUI
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (Select > 0)
+            if (Select0 > 0)
             {
-                if (MessageBox.Show("Bạn có muốn xóa nhân viên có mã: " + Select, "Hãy cẩn thận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Bạn có muốn xóa nhân viên có mã: " + Select0, "Hãy cẩn thận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    nv.XoaNhanVien(Select);
+                    nv.XoaNhanVien(Select0);
                     dTOProfileBindingSource.Clear();
                     list = nv.DanhSachNhanVien();
                     for (int i = 0; i < list.Count; i++)
@@ -155,7 +155,7 @@ namespace GUI
         {
             if (e.RowIndex >= 0)
             {
-                Select = Convert.ToInt32(dgvNHANVIEN.Rows[e.RowIndex].Cells[0].Value);
+                Select0 = Convert.ToInt32(dgvNHANVIEN.Rows[e.RowIndex].Cells[0].Value);
                 txbMANV.Text = dgvNHANVIEN.Rows[e.RowIndex].Cells[0].Value.ToString();
                 txbHoTen.Text = dgvNHANVIEN.Rows[e.RowIndex].Cells[1].Value.ToString();
                 txbDiaChi.Text = dgvNHANVIEN.Rows[e.RowIndex].Cells[4].Value.ToString();
