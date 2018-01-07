@@ -51,7 +51,7 @@ CREATE TABLE `Benhnhan` (
 `CTY` longtext NULL,
 
 `TSBENH` longtext NULL,
-`enabled` int DEFAULT 0,
+`enabled` int DEFAULT 1,
 
 PRIMARY KEY (`MABN`) 
 
@@ -125,6 +125,8 @@ CREATE TABLE `donthuoc` (
 
 `MAPKB` int(5) unsigned zerofill,
 
+`MANV` int(5) unsigned zerofill NOT NULL,
+
 PRIMARY KEY (`MADT`) 
 
 );
@@ -155,45 +157,30 @@ CREATE TABLE `thuoc` (
 
 `SOLUONGCON` varchar(255) NULL,
 
+`DONGIA` double NULL,
+
+`MANV` int(5) unsigned zerofill,
+`enabled` int DEFAULT 1,
+
 PRIMARY KEY (`MATHUOC`) 
 
 );
 
 
 
+
+
 CREATE TABLE `dichvu` (
 
-`MADICHVU` int(5) unsigned zerofill NOT NULL AUTO_INCREMENT,
+`MADV` int(5) unsigned zerofill NOT NULL AUTO_INCREMENT,
 
 `TENDICHVU` longtext NULL,
-
-PRIMARY KEY (`MADICHVU`) 
-
-);
-
-
-
-CREATE TABLE `dongiathuoc` (
-
-`MANV` int(5) unsigned zerofill,
-
-`MATHUOC` int(5) unsigned zerofill,
-
-`DONGIA` double NULL,
-
-PRIMARY KEY (`MANV`) 
-
-);
-
-
-
-CREATE TABLE `dongiadichvu` (
-
-`MADV` int(5) unsigned zerofill,
 
 `MANV` int(5) unsigned zerofill,
 
 `GIADICHVU` double NULL,
+
+`enabled` int DEFAULT 1,
 
 PRIMARY KEY (`MADV`, `MANV`) 
 
@@ -220,26 +207,83 @@ ALTER TABLE `pkb` ADD CONSTRAINT `MABS_PKB_2` FOREIGN KEY (`MABS`) REFERENCES `p
 
 ALTER TABLE `ctdonthuoc` ADD CONSTRAINT `THUOC` FOREIGN KEY (`MATHUOC`) REFERENCES `thuoc` (`MATHUOC`);
 
-ALTER TABLE `cthdtk` ADD CONSTRAINT `MADV` FOREIGN KEY (`MADICHVU`) REFERENCES `dichvu` (`MADICHVU`);
+ALTER TABLE `cthdtk` ADD CONSTRAINT `MADV` FOREIGN KEY (`MADICHVU`) REFERENCES `dichvu` (`MADV`);
 
-ALTER TABLE `dongiathuoc` ADD CONSTRAINT `MATHUOC` FOREIGN KEY (`MATHUOC`) REFERENCES `thuoc` (`MATHUOC`);
 
-ALTER TABLE `dongiathuoc` ADD CONSTRAINT `manv` FOREIGN KEY (`MANV`) REFERENCES `profile` (`MANV`);
+ALTER TABLE `thuoc` ADD CONSTRAINT `manv` FOREIGN KEY (`MANV`) REFERENCES `profile` (`MANV`);
 
-ALTER TABLE `dongiadichvu` ADD CONSTRAINT `MADICHVU` FOREIGN KEY (`MADV`) REFERENCES `dichvu` (`MADICHVU`);
 
-ALTER TABLE `dongiadichvu` ADD CONSTRAINT `MANV_DGDV` FOREIGN KEY (`MANV`) REFERENCES `profile` (`MANV`);
+ALTER TABLE `dichvu` ADD CONSTRAINT `MANV_DGDV` FOREIGN KEY (`MANV`) REFERENCES `profile` (`MANV`);
 
 ALTER TABLE `donthuoc` ADD CONSTRAINT `MAPKB_DT` FOREIGN KEY (`MAPKB`) REFERENCES `pkb` (`MAPKB`);
 
+ALTER TABLE `donthuoc` ADD CONSTRAINT `MANV_DT` FOREIGN KEY (`MANV`) REFERENCES `profile` (`MANV`);
 
+
+select hdtk.MAHDTK , hdtk.MAPKB, hdtk.NGAYLAPHD, hdtk.THANHTIEN, profile.TENNV   from `hdtk`, `profile` where NGAYLAPHD >= '2017-05-05' and  NGAYLAPHD <= '2017-08-05' and profile.MANV = hdtk.MANV ;
+
+select donthuoc.MADT , donthuoc.MAPKB, donthuoc.NGAYLAPTT, donthuoc.THANHTIEN, profile.TENNV   from `donthuoc`, `profile` where NGAYLAPTT >= '2017-05-05' and  NGAYLAPTT <= '2017-08-05' and profile.MANV = donthuoc.MANV ;
+
+
+select MONTH(NGAYLAPHD) AS THANG, Sum(THANHTIEN) AS DOANHTHU from `hdtk` where YEAR(NGAYLAPHD) = '2017' group by MONTH(NGAYLAPHD) order by THANG;
+
+select MONTH(NGAYLAPTT) AS THANG, Sum(THANHTIEN) AS DOANHTHU from `donthuoc` where YEAR(NGAYLAPTT) = '2017' group by MONTH(NGAYLAPTT) order by THANG;
 
 
 /* User */
+/*Profile*/
+insert into profile(TENNV, NGAYSINH, GTINH, DIACHI, SDT, CHUCVU, enabled,role,temppassword) values('Hàng Tuấn Thiên','12-01-1998',1,'12323hjgjhg',099898, 'h',1,0,'123456');
+insert into profile(TENNV, NGAYSINH, GTINH, DIACHI, SDT, CHUCVU, enabled,role,temppassword) values('Đỗ Trung Quốc','12-01-1998',1,'12323hjgjhg',099898, 'h',1,1,'123456');
+insert into profile(TENNV, NGAYSINH, GTINH, DIACHI, SDT, CHUCVU, enabled,role,temppassword) values('Nguyễn Anh Dũ','12-01-1998',1,'12323hjgjhg',099898, 'h',1,2,'123456');
+insert into profile(TENNV, NGAYSINH, GTINH, DIACHI, SDT, CHUCVU, enabled,role,temppassword) values('Lê Văn Cường','12-01-1998',1,'12323hjgjhg',099898, 'h',1,0,'123456');
+select * from `profile`;
 
-insert into profile(TENNV, NGAYSINH, GTINH, DIACHI, SDT, CHUCVU, enabled,role,temppassword) values('h','12-01-1998',1,'12323hjgjhg',099898, 'h',1,2,'11212324');
-
-Update profile set TENNV = "+TENNV +", NGAYSINH = "+NGAYSINH+", GTINH = true, DIACHI = "+DIACHI+", SDT = 01234567, CHUCVU = "+CHUCVU+", enabled = 1,role = "+role+",temppassword = "+temppassword+" where MANV = "2"
+/*
+update profile set TENNV = "+TENNV +", NGAYSINH = "12/01/1996", GTINH = true, DIACHI = "+DIACHI+", SDT = 01234567, CHUCVU = "+CHUCVU+", enabled = 1,role = "1",temppassword = "+temppassword+" where MANV = "2"
 ;
-select * from `profile`
 
+
+*/
+select * from donthuoc;
+SELECT * FROM profile WHERE MANV = 2 and temppassword ='123456';
+INSERT INTO `benhvien`.`donthuoc` ( `NGAYLAPTT`, `THANHTIEN`, `MAPKB`, `MANV`) VALUES ('2017-05-15','180000','1', '1');
+INSERT INTO `benhvien`.`donthuoc` ( `NGAYLAPTT`, `THANHTIEN`, `MAPKB`, `MANV`) VALUES ('2017-05-15','170000','2', '1');
+INSERT INTO `benhvien`.`donthuoc` ( `NGAYLAPTT`, `THANHTIEN`, `MAPKB`, `MANV`) VALUES ('2017-05-15','160000','3', '1');
+INSERT INTO `benhvien`.`donthuoc` ( `NGAYLAPTT`, `THANHTIEN`, `MAPKB`, `MANV`) VALUES ('2017-05-15','150000','4', '1');
+INSERT INTO `benhvien`.`donthuoc` ( `NGAYLAPTT`, `THANHTIEN`, `MAPKB`, `MANV`) VALUES ('2017-05-15','140000','5', '1');
+/*insert data bao cao*/
+INSERT INTO `benhvien`.`Benhnhan` (`TENBN`, `NGAYSINH`, `GTINH`, `DCHI`, `SDT`, `CTY`, `TSBENH`, `enabled`) VALUES ('B', '1996-05-20', '1', 'Ho Chi Minh', '123456', 'Ho Chi Minh', 'B', '0');
+INSERT INTO `benhvien`.`Benhnhan` (`TENBN`, `NGAYSINH`, `GTINH`, `DCHI`, `SDT`, `CTY`, `TSBENH`, `enabled`) VALUES ('Nguyễn A', '1996-05-20', '1', 'Ho Chi Minh', '123456', 'Ho Chi Minh', 'B', '0');
+INSERT INTO `benhvien`.`Benhnhan` (`TENBN`, `NGAYSINH`, `GTINH`, `DCHI`, `SDT`, `CTY`, `TSBENH`, `enabled`) VALUES ('Nguyễn B', '1996-05-20', '1', 'Ho Chi Minh', '123456', 'Ho Chi Minh', 'B', '0');
+INSERT INTO `benhvien`.`Benhnhan` (`TENBN`, `NGAYSINH`, `GTINH`, `DCHI`, `SDT`, `CTY`, `TSBENH`, `enabled`) VALUES ('Nguyễn C', '1996-05-20', '1', 'Ho Chi Minh', '123456', 'Ho Chi Minh', 'B', '0');
+INSERT INTO `benhvien`.`Benhnhan` (`TENBN`, `NGAYSINH`, `GTINH`, `DCHI`, `SDT`, `CTY`, `TSBENH`, `enabled`) VALUES ('Nguyễn D', '1996-05-20', '1', 'Ho Chi Minh', '123456', 'Ho Chi Minh', 'B', '0');
+
+INSERT INTO `benhvien`.`pkb` (`MABN`, `MANV`, `MABS`, `TRCHUNG`, `CDOAN`, `NGAYKHAM`, `LHEN`, `GCHU`) VALUES ('1', '1', '2', 'Khùng', 'Sắp chết', '2017-05-05', 'dasdaa', 'asdasdad');
+INSERT INTO `benhvien`.`pkb` (`MABN`, `MANV`, `MABS`, `TRCHUNG`, `CDOAN`, `NGAYKHAM`, `LHEN`, `GCHU`) VALUES ('2', '1', '2', 'Khùng', 'Sắp chết', '2017-05-05', 'dasdaa', 'asdasdad');
+INSERT INTO `benhvien`.`pkb` (`MABN`, `MANV`, `MABS`, `TRCHUNG`, `CDOAN`, `NGAYKHAM`, `LHEN`, `GCHU`) VALUES ('3', '1', '2', 'Khùng', 'Sắp chết', '2017-05-05', 'dasdaa', 'asdasdad');
+INSERT INTO `benhvien`.`pkb` (`MABN`, `MANV`, `MABS`, `TRCHUNG`, `CDOAN`, `NGAYKHAM`, `LHEN`, `GCHU`) VALUES ('4', '1', '2', 'Khùng', 'Sắp chết', '2017-05-05', 'dasdaa', 'asdasdad');
+INSERT INTO `benhvien`.`pkb` (`MABN`, `MANV`, `MABS`, `TRCHUNG`, `CDOAN`, `NGAYKHAM`, `LHEN`, `GCHU`) VALUES ('5', '1', '2', 'Khùng', 'Sắp chết', '2017-05-05', 'dasdaa', 'asdasdad');
+
+INSERT INTO `benhvien`.`hdtk` (`MAPKB`, `MANV`, `NGAYLAPHD`, `THANHTIEN`) VALUES ('1', '1', '2017-05-15', '180000');
+INSERT INTO `benhvien`.`hdtk` (`MAPKB`, `MANV`, `NGAYLAPHD`, `THANHTIEN`) VALUES ('2', '1', '2017-06-05', '160000');
+INSERT INTO `benhvien`.`hdtk` (`MAPKB`, `MANV`, `NGAYLAPHD`, `THANHTIEN`) VALUES ('3', '1', '2017-07-05', '140000');
+INSERT INTO `benhvien`.`hdtk` (`MAPKB`, `MANV`, `NGAYLAPHD`, `THANHTIEN`) VALUES ('4', '1', '2017-08-05', '150000');
+INSERT INTO `benhvien`.`hdtk` (`MAPKB`, `MANV`, `NGAYLAPHD`, `THANHTIEN`) VALUES ('5', '1', '2017-09-05', '170000');
+/*DichVu*/
+
+insert into dichvu(`TENDICHVU`,`MANV`, `GIADICHVU`, `enabled`) values('Khám tổng quát',1,300000, 1);
+insert into dichvu(`TENDICHVU`,`MANV`, `GIADICHVU`, `enabled`) values('Khám nội soi 1',1,200000, 1);
+insert into dichvu(`TENDICHVU`,`MANV`, `GIADICHVU`, `enabled`) values('Siêu âm lồng ngực',1,400000, 1);
+
+
+insert into dichvu(`TENDICHVU`,`MANV`, `GIADICHVU`) values('Khám nội soi 1',1,300000);
+insert into dichvu(`TENDICHVU`,`MANV`, `GIADICHVU`) values('Siêu âm lồng ngực',2,400000);
+
+SELECT * from dichvu;
+
+/*Thuoc*/
+
+insert into thuoc(TENTHUOC,SOLUONGCON,DONGIA, MANV) values ('Paracetamol', 50, 50000,1);
+insert into thuoc(TENTHUOC,SOLUONGCON,DONGIA, MANV) values ('Acerin', 100, 80000,1);
+insert into thuoc(TENTHUOC,SOLUONGCON,DONGIA,MANV) values ('Benzel Dioxit', 50, 50000,1);
+select * from thuoc;

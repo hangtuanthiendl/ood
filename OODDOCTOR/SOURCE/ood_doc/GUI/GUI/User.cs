@@ -30,32 +30,38 @@ namespace GUI
 
         private void buttonX1_Click(object sender, EventArgs e)
         {
-            if (con.KiemTraUser(textBoxX2.Text, textBoxX1.Text) != -1)
+            DTO.DTO_Profile prf = con.KiemTraUser(textBoxX2.Text, textBoxX1.Text);
+            if (prf != null)
             {
-                //MessageBox.Show("Đăng nhập thành công! Role :" + con.KiemTraUser(textBoxX2.Text, textBoxX1.Text));
-                switch (con.KiemTraUser(textBoxX2.Text, textBoxX1.Text))
+                if (prf.ROLE != -1)
                 {
-                    case 2://Nhan Vien
-                        NHAN_VIEN nv = new NHAN_VIEN();
-                        nv.Show();
-                        break;
+                    MessageBox.Show("Đăng nhập thành công! Xin chào " + prf.TENNV);
+                    this.Hide();
+                    switch (prf.ROLE)
+                    {
+                        case 2://Nhan Vien
+                            NHAN_VIEN nv = new NHAN_VIEN();
+                            nv.ShowDialog();
+                            break;
 
-                    case 1://Bac Si
-                        BACSI bs = new BACSI();
-                        bs.Show();
-                        break;
+                        case 1://Bac Si
+                            BACSI bs = new BACSI();
+                            bs.ShowDialog();
+                            break;
 
-                    case 0://Giam Doc
-                        GIAM_DOC gd = new GIAM_DOC();
-                        gd.Show();
-                        break;
+                        case 0://Giam Doc
+                            GIAM_DOC gd = new GIAM_DOC(prf);
+                            gd.ShowDialog();
+                            break;
+                    }
+                    
+                   // textBoxX1.ResetText();
+                   // textBoxX2.ResetText();
                 }
             }
             else
-                MessageBox.Show("Đăng nhập thất bại! Role :" + con.KiemTraUser(textBoxX2.Text, textBoxX1.Text));
-            this.Hide();
-            textBoxX1.ResetText();
-            textBoxX2.ResetText();
+                MessageBox.Show("Đăng nhập thất bại!");
+            
         }
 
         private void textBoxX1_KeyDown(object sender, KeyEventArgs e)

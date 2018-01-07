@@ -41,10 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO_BenhNhan.cs" />
-    <Compile Include="DTO_CtDonThuoc.cs" />
-    <Compile Include="DTO_Cthdtk.cs" />
     <Compile Include="DTO_DichVu.cs" />
-    <Compile Include="DTO_DonGiaDichVu.cs" />
     <Compile Include="DTO_DonThuoc.cs" />
     <Compile Include="DTO_Hdtk.cs" />
     <Compile Include="DTO_Pkb.cs" />
